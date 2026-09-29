@@ -12,26 +12,18 @@
 body{margin:0} img{max-width:100%} [hidden]{display:none!important}
 
 /* Layout: fichário de estudo — cabeçalho, abas por tipo com marca-texto, lista agrupada pelas áreas do ENEM (LC, CH, CN, MT) */
+/* Paleta preto e laranja (tema único escuro) */
 :root{
-  --papel:#f2f4f6; --superficie:#ffffff; --tinta:#15202c; --tinta-2:#56626f; --linha:#d8dde3;
-  --marcador:#f7d23e; --marcador-tinta:#15202c; --botao:#15202c; --botao-tinta:#ffffff;
-  --lc:#c2410c; --ch:#9a6700; --cn:#15803d; --mt:#1d4ed8; --rd:#a3195b; --ge:#5b6672; --uj:#0f766e;
-  --erro:#b42318; --ok:#15803d;
+  --papel:#0b0b0b; --superficie:#161616; --tinta:#f5f2ee; --tinta-2:#a8a29b; --linha:#2c2a28;
+  --marcador:#ff6b00; --marcador-tinta:#0b0b0b; --botao:#ff6b00; --botao-tinta:#0b0b0b;
+  --lc:#ff8a3d; --ch:#ff7a1a; --cn:#ff6b00; --mt:#ff6b00; --rd:#ffa04d; --ge:#ff7a1a; --uj:#f25c05;
+  --erro:#ff6b6b; --ok:#ff6b00;
   --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --f-texto:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --raio:10px;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --papel:#10151b; --superficie:#171e26; --tinta:#e6ebf0; --tinta-2:#9aa6b2; --linha:#2a3440;
-  --marcador:#d9b21f; --marcador-tinta:#10151b; --botao:#e6ebf0; --botao-tinta:#10151b;
-  --lc:#f08a5d; --ch:#e0b34a; --cn:#5cc27f; --mt:#7ea2ff; --rd:#ee6fa6; --ge:#9aa6b2; --uj:#4fc4b4;
-  --erro:#ff8a7a; --ok:#5cc27f; color-scheme:dark } }
-:root[data-theme="dark"]{
-  --papel:#10151b; --superficie:#171e26; --tinta:#e6ebf0; --tinta-2:#9aa6b2; --linha:#2a3440;
-  --marcador:#d9b21f; --marcador-tinta:#10151b; --botao:#e6ebf0; --botao-tinta:#10151b;
-  --lc:#f08a5d; --ch:#e0b34a; --cn:#5cc27f; --mt:#7ea2ff; --rd:#ee6fa6; --ge:#9aa6b2; --uj:#4fc4b4;
-  --erro:#ff8a7a; --ok:#5cc27f; color-scheme:dark }
 
 *{box-sizing:border-box}
 body{background:var(--papel); color:var(--tinta); font-family:var(--f-texto); font-size:15px; line-height:1.5}
@@ -132,7 +124,7 @@ h1 .grifo{background:linear-gradient(transparent 58%, var(--marcador) 58%, var(-
 .busca.grande svg{left:15px}
 .areas{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:8px; margin-top:16px}
 @media (max-width:860px){ .areas{grid-template-columns:repeat(4, minmax(0,1fr))} }
-@media (max-width:480px){ .areas{grid-template-columns:repeat(3, minmax(0,1fr)); gap:6px} .area-btn{padding:9px 10px; gap:2px} .area-btn .sigla{display:none} .area-btn .area-nome{font-size:14px} }
+@media (max-width:480px){ .areas{grid-template-columns:repeat(3, minmax(0,1fr)); gap:6px} .area-btn{padding:9px 10px; gap:2px} .area-btn .sigla{display:none} .area-btn .area-nome{font-size:13px; overflow-wrap:anywhere} }
 .area-btn{display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:0; padding:12px; border:1px solid var(--linha); border-radius:var(--raio); background:var(--superficie); cursor:pointer; text-align:left; position:relative}
 .area-btn:hover{border-color:var(--cor)}
 .area-btn .area-nome{font-weight:700; font-size:15px; line-height:1.2}
@@ -159,6 +151,15 @@ h1 .grifo{background:linear-gradient(transparent 58%, var(--marcador) 58%, var(-
 .resultado{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-top:22px}
 .resultado p{margin:0}
 .grupo h2 .sigla{margin-right:2px}
+
+h1 .grifo{background:none; color:var(--marcador)}
+.area-btn[aria-pressed="true"]{background:var(--marcador); border-color:var(--marcador); color:var(--marcador-tinta); box-shadow:none}
+.area-btn[aria-pressed="true"] .sigla{color:inherit; border-color:currentColor}
+.area-btn[aria-pressed="true"] .area-n{color:inherit; opacity:.75}
+.abrir:hover{border-color:var(--marcador); color:var(--marcador)}
+.busca.grande input:focus{border-color:var(--marcador); outline:none; box-shadow:0 0 0 3px rgba(255,107,0,.25)}
+.como-usar{border-color:var(--linha); border-top:3px solid var(--marcador)}
+.item .faixa{background:var(--marcador)}
 </style>
 </head>
 <body>
