@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa de Recorrência ENEM — Loghus</title>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f2f2ee;
+  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --accent:#2a78d6; --accent-soft:rgba(42,120,214,.10);
+  --a-LC:#2a78d6; --a-CH:#eb6834; --a-CN:#1baf7a; --a-MT:#eda100;
+  --pos:#2a78d6; --neg:#e34948; --mid:#f0efec;
+  --spark:#c3c2b7;
+  --sans:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232322;
+    --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --accent:#3987e5; --accent-soft:rgba(57,135,229,.16);
+    --a-LC:#3987e5; --a-CH:#d95926; --a-CN:#199e70; --a-MT:#c98500;
+    --pos:#3987e5; --neg:#e66767; --mid:#383835; --spark:#52514e;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232322;
+  --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --accent:#3987e5; --accent-soft:rgba(57,135,229,.16);
+  --a-LC:#3987e5; --a-CH:#d95926; --a-CN:#199e70; --a-MT:#c98500;
+  --pos:#3987e5; --neg:#e66767; --mid:#383835; --spark:#52514e;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--page); color:var(--ink);
+  font-family:var(--sans); font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px; margin:0 auto; padding:28px 20px 72px}
+.num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+
+header.top{margin-bottom:20px}
+.marca{display:flex; align-items:center; gap:14px; margin-bottom:18px}
+.marca img{height:58px; width:auto; display:block}
+.marca.rodape img{height:34px}
+.marca .risco{width:1px; align-self:stretch; background:var(--grid)}
+.marca span{font-family:var(--mono); font-size:10px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted)}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .marca img{filter:invert(1)}
+}
+:root[data-theme="dark"] .marca img{filter:invert(1)}
+@media (max-width:520px){ .marca img{height:42px} .marca.rodape img{height:26px} }
+.tema{margin-left:auto; display:inline-flex; align-items:center; gap:7px; min-height:auto;
+  font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-2); background:var(--surface); border:1px solid var(--axis);
+  border-radius:999px; padding:7px 13px; cursor:pointer}
+.tema:hover{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+.tema svg{width:14px; height:14px; flex:0 0 14px; display:block}
+@media (max-width:520px){ .tema span.rot{display:none} .tema{padding:7px 9px} }
+.eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px}
+h1{font-size:clamp(26px,4vw,38px); line-height:1.1; font-weight:700; letter-spacing:-.02em;
+  margin:0 0 8px; text-wrap:balance}
+.dek{color:var(--ink-2); max-width:64ch; margin:0}
+
+.cov{margin-top:20px; border:1px solid var(--ring); border-radius:10px; background:var(--surface);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); overflow:hidden}
+.cov > div{padding:11px 14px; border-right:1px solid var(--grid)}
+.cov > div:last-child{border-right:0}
+.cov dt{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); margin:0 0 3px}
+.cov dd{margin:0; font-size:13px; font-weight:500}
+.cov dd b{font-family:var(--mono); font-weight:600}
+
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0}
+.tile{background:var(--surface); border:1px solid var(--ring); border-radius:10px; padding:14px}
+.tile .k{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:6px}
+.tile .v{font-family:var(--mono); font-size:27px; font-weight:600; line-height:1; letter-spacing:-.02em}
+.tile .sub{font-size:12px; color:var(--ink-2); margin-top:5px}
+
+.filters{display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; background:var(--surface);
+  border:1px solid var(--ring); border-radius:10px; padding:12px 14px; margin-bottom:20px}
+.f{display:flex; flex-direction:column; gap:4px}
+.f label{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+select,input[type=search],button{font-family:var(--sans); font-size:13px; color:var(--ink);
+  background:var(--surface-2); border:1px solid var(--axis); border-radius:7px; padding:7px 9px; min-height:34px}
+input[type=search]{min-width:210px}
+select:focus-visible,input:focus-visible,button:focus-visible,th button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+button{cursor:pointer; font-weight:500}
+button:hover{background:var(--accent-soft); border-color:var(--accent)}
+.spacer{flex:1 1 auto}
+.count{font-family:var(--mono); font-size:12px; color:var(--ink-2); padding-bottom:8px}
+
+.panels{display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:18px}
+@media(min-width:1040px){ .panels.two{grid-template-columns:1fr 1fr} }
+.panel{background:var(--surface); border:1px solid var(--ring); border-radius:10px; padding:16px 18px 18px}
+.panel h2{font-size:15px; font-weight:600; margin:0 0 3px; letter-spacing:-.01em}
+.panel .note{font-size:12px; color:var(--muted); margin:0 0 14px}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin:0 0 14px}
+.legend span{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-2)}
+.dot{width:9px; height:9px; border-radius:50%; flex:0 0 auto}
+
+/* tabela principal */
+.tablewrap{overflow:auto; max-height:620px; border:1px solid var(--ring); border-radius:10px; background:var(--surface)}
+table.tp{border-collapse:collapse; width:100%; font-size:12.5px; min-width:940px}
+table.tp th{position:sticky; top:0; z-index:2; background:var(--surface-2); text-align:left;
+  border-bottom:1px solid var(--axis); padding:0; white-space:nowrap}
+table.tp th button{all:unset; cursor:pointer; display:block; width:100%; padding:9px 10px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-2); font-weight:600}
+table.tp th button:hover{color:var(--accent)}
+table.tp td{padding:7px 10px; border-bottom:1px solid var(--grid); vertical-align:middle}
+table.tp tbody tr:hover{background:var(--accent-soft)}
+td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; text-align:right}
+.tag{display:inline-flex; align-items:center; gap:5px; font-family:var(--mono); font-size:11px; font-weight:600}
+.topo{font-weight:500}
+.disc{font-size:11px; color:var(--muted)}
+
+/* barra divergente de tendência: barra e rótulo lado a lado, sem sobreposição */
+.tcell{display:flex; align-items:center; gap:8px}
+.tb{position:relative; flex:0 0 96px; width:96px; height:14px;
+  background:linear-gradient(var(--mid),var(--mid)) center/1px 100% no-repeat}
+.tb i{position:absolute; top:2px; height:10px; border-radius:2px}
+.tval{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:11px;
+  color:var(--ink-2); flex:0 0 46px; text-align:right}
+
+/* sparkline */
+svg.sp{display:block}
+svg.sp rect{fill:var(--spark)}
+svg.sp rect.hi{fill:var(--accent)}
+
+/* eixos */
+table.ex{border-collapse:separate; border-spacing:2px; font-family:var(--mono); font-size:11px; width:100%}
+table.ex th{font-weight:500; color:var(--muted); font-size:10px; padding:2px 4px; text-align:center}
+table.ex th.rh{text-align:left; font-family:var(--sans); font-size:12px; color:var(--ink-2); white-space:normal}
+table.ex td{text-align:center; border-radius:4px; padding:4px 0; min-width:44px}
+
+footer{margin-top:34px; padding-top:16px; border-top:1px solid var(--grid); color:var(--muted); font-size:12px}
+footer p{margin:0 0 6px; max-width:80ch}
+#tip{position:fixed; z-index:60; pointer-events:none; opacity:0; transition:opacity .1s;
+  background:var(--surface); color:var(--ink); border:1px solid var(--axis); border-radius:8px;
+  padding:9px 11px; font-size:12px; max-width:300px; box-shadow:0 6px 22px rgba(0,0,0,.16)}
+#tip .t{font-family:var(--mono); font-weight:600; margin-bottom:4px; font-size:11.5px}
+#tip dl{display:grid; grid-template-columns:auto 1fr; gap:2px 9px; margin:0}
+#tip dt{color:var(--muted); font-size:11px}
+#tip dd{margin:0; font-family:var(--mono); font-size:11.5px}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+<script>
+try{ var t = localStorage.getItem('loghus-tema');
+     if(t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; }catch(e){}
+</script>
+<div class="wrap">
+<header class="top">
+  <div class="marca">
+    <img src="data:image/png;base64,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" alt="Curso Loghus">
+    <i class="risco"></i>
+    <span>Inteligência de prova</span>
+    <button class="tema" id="tema" type="button">
+      <span id="temaIcone"></span><span class="rot" id="temaTexto"></span>
+    </button>
+  </div>
+  <p class="eyebrow">Microdados do Inep · 2013 a 2025 · caderno azul</p>
+  <h1>Mapa de Recorrência ENEM</h1>
+  <p class="dek">O que de fato se repete na prova. Cada questão das quatro áreas foi classificada
+  num tópico de conteúdo; aqui eles aparecem pela frequência, pelo que subiu ou caiu nas provas de
+  2023 em diante e pela dificuldade média medida na TRI.</p>
+  <dl class="cov" id="cov"></dl>
+</header>
+
+<section class="tiles" id="tiles"></section>
+
+<div class="filters">
+  <div class="f"><label for="fArea">Área</label>
+    <select id="fArea"><option value="">Todas</option></select></div>
+  <div class="f"><label for="fDisc">Disciplina</label>
+    <select id="fDisc"><option value="">Todas</option></select></div>
+  <div class="f"><label for="fOrd">Ordenar por</label>
+    <select id="fOrd">
+      <option value="n">Nº de questões</option>
+      <option value="tend">Tendência</option>
+      <option value="tri">Dificuldade (TRI)</option>
+      <option value="a">Discriminação</option>
+    </select></div>
+  <div class="f"><label for="fBusca">Busca</label>
+    <input type="search" id="fBusca" placeholder="tópico ou disciplina…"></div>
+  <div class="spacer"></div>
+  <div class="count" id="count"></div>
+  <div class="f"><label for="btnReset">&nbsp;</label><button id="btnReset">Limpar</button></div>
+</div>
+
+<div class="panels">
+  <section class="panel">
+    <h2>Tópicos por recorrência</h2>
+    <p class="note">Questões por prova considera as 24 aplicações da série. A minibarra mostra a
+      distribuição ano a ano, de 2013 a 2025. Clique no cabeçalho para reordenar.</p>
+    <div class="legend" id="leg"></div>
+    <div class="tablewrap">
+      <table class="tp"><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+  </section>
+</div>
+
+<div class="panels two">
+  <section class="panel">
+    <h2>O que subiu e o que caiu</h2>
+    <p class="note">Diferença entre a taxa por prova de 2023–2025 e a de 2013–2022, entre os
+      tópicos com pelo menos 8 questões na série.</p>
+    <div id="altaqueda"></div>
+  </section>
+  <section class="panel">
+    <h2>Dificuldade por tópico</h2>
+    <p class="note">Nota média na escala do ENEM (500 + 100 × parâmetro b). Os extremos da série,
+      entre tópicos com pelo menos 8 questões.</p>
+    <p class="note" id="mediaArea" style="margin:-8px 0 14px"></p>
+    <div id="dificuldade"></div>
+  </section>
+</div>
+
+<div class="panels">
+  <section class="panel">
+    <h2>Eixos transversais</h2>
+    <p class="note">Temas de contexto que atravessam as disciplinas. Um item pode ter mais de um, e
+      em Matemática o campo costuma ficar vazio — lá o contexto quase sempre é só o cenário do problema.</p>
+    <div style="overflow-x:auto"><table class="ex" id="tex"></table></div>
+  </section>
+</div>
+
+<footer>
+  <p><b>Escala da TRI.</b> É ancorada na população de referência da calibração do Inep, não na coorte
+  de cada ano — a média dos itens não precisa ser 500, e não é.</p>
+  <div class="marca rodape" style="margin:18px 0 0">
+    <img src="data:image/png;base64,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" alt="Curso Loghus">
+    <i class="risco"></i>
+    <span>Curso Loghus · análise própria sobre os microdados do Inep</span>
+  </div>
+</footer>
+</div>
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+
+<script>
+const DB = {"periodos":{"p1":"2013–2022","p2":"2023–2025","n1":18,"n2":6},"topicos":[{"ar":"CH","di":"Filosofia","to":"Corpo, existência, subjetividade e tempo","n":19,"ate":0.89,"dep":0.5,"qp":0.79,"tri":635,"a":1.72,"tend":-0.39},{"ar":"CH","di":"Filosofia","to":"Cultura, sociedade e crítica","n":4,"ate":0.22,"dep":0.0,"qp":0.17,"tri":598,"a":2.57,"tend":-0.22},{"ar":"CH","di":"Filosofia","to":"Democracia, cidadania e participação","n":8,"ate":0.33,"dep":0.33,"qp":0.33,"tri":644,"a":2.56,"tend":0.0},{"ar":"CH","di":"Filosofia","to":"Estética, arte e técnica","n":6,"ate":0.28,"dep":0.17,"qp":0.25,"tri":612,"a":2.09,"tend":-0.11},{"ar":"CH","di":"Filosofia","to":"Filosofia política: Estado, poder e contratualismo","n":25,"ate":0.94,"dep":1.33,"qp":1.04,"tri":615,"a":2.0,"tend":0.39},{"ar":"CH","di":"Filosofia","to":"Filosofia, ciência e natureza","n":14,"ate":0.61,"dep":0.5,"qp":0.58,"tri":630,"a":1.94,"tend":-0.11},{"ar":"CH","di":"Filosofia","to":"Lógica, linguagem e argumentação","n":7,"ate":0.22,"dep":0.5,"qp":0.29,"tri":595,"a":2.09,"tend":0.28},{"ar":"CH","di":"Filosofia","to":"Teoria do conhecimento e epistemologia","n":33,"ate":1.5,"dep":1.0,"qp":1.38,"tri":680,"a":1.94,"tend":-0.5},{"ar":"CH","di":"Filosofia","to":"Ética, moral e justiça","n":51,"ate":2.0,"dep":2.5,"qp":2.12,"tri":636,"a":2.11,"tend":0.5},{"ar":"CH","di":"Geografia","to":"Agricultura, agronegócio e espaço agrário","n":42,"ate":1.61,"dep":2.17,"qp":1.75,"tri":595,"a":2.43,"tend":0.56},{"ar":"CH","di":"Geografia","to":"Cartografia, escalas e representação do espaço","n":26,"ate":1.11,"dep":1.0,"qp":1.08,"tri":609,"a":2.27,"tend":-0.11},{"ar":"CH","di":"Geografia","to":"Clima, atmosfera e domínios naturais","n":36,"ate":1.28,"dep":2.17,"qp":1.5,"tri":593,"a":2.16,"tend":0.89},{"ar":"CH","di":"Geografia","to":"Demografia, migrações e estrutura populacional","n":25,"ate":1.06,"dep":1.0,"qp":1.04,"tri":595,"a":2.81,"tend":-0.06},{"ar":"CH","di":"Geografia","to":"Geopolítica, blocos econômicos e conflitos internacionais","n":30,"ate":1.17,"dep":1.5,"qp":1.25,"tri":614,"a":2.49,"tend":0.33},{"ar":"CH","di":"Geografia","to":"Globalização, redes e novas tecnologias","n":16,"ate":0.72,"dep":0.5,"qp":0.67,"tri":585,"a":2.62,"tend":-0.22},{"ar":"CH","di":"Geografia","to":"Indústria, estruturas produtivas e circulação","n":15,"ate":0.78,"dep":0.17,"qp":0.62,"tri":638,"a":1.94,"tend":-0.61},{"ar":"CH","di":"Geografia","to":"Questões ambientais, sustentabilidade e mudanças climáticas","n":40,"ate":1.78,"dep":1.33,"qp":1.67,"tri":586,"a":2.07,"tend":-0.45},{"ar":"CH","di":"Geografia","to":"Recursos hídricos e bacias hidrográficas","n":17,"ate":0.89,"dep":0.17,"qp":0.71,"tri":589,"a":2.22,"tend":-0.72},{"ar":"CH","di":"Geografia","to":"Recursos minerais, energéticos e matriz energética","n":9,"ate":0.33,"dep":0.5,"qp":0.38,"tri":595,"a":1.77,"tend":0.17},{"ar":"CH","di":"Geografia","to":"Relevo, geologia, solos e dinâmica da Terra","n":42,"ate":1.94,"dep":1.17,"qp":1.75,"tri":608,"a":2.37,"tend":-0.77},{"ar":"CH","di":"Geografia","to":"Sociedade e natureza; saberes e povos tradicionais","n":12,"ate":0.39,"dep":0.83,"qp":0.5,"tri":592,"a":1.82,"tend":0.44},{"ar":"CH","di":"Geografia","to":"Território, formação territorial e regionalização","n":13,"ate":0.44,"dep":0.83,"qp":0.54,"tri":592,"a":2.46,"tend":0.39},{"ar":"CH","di":"Geografia","to":"Urbanização, rede urbana e problemas urbanos","n":39,"ate":1.89,"dep":0.83,"qp":1.62,"tri":598,"a":2.35,"tend":-1.06},{"ar":"CH","di":"História","to":"Antiguidade Clássica e Oriental","n":19,"ate":0.78,"dep":0.83,"qp":0.79,"tri":616,"a":2.53,"tend":0.05},{"ar":"CH","di":"História","to":"Brasil Colônia: colonização, economia colonial e conquista da América","n":40,"ate":1.83,"dep":1.17,"qp":1.67,"tri":622,"a":2.05,"tend":-0.66},{"ar":"CH","di":"História","to":"Brasil Império: independência, Estado nacional e conflitos","n":22,"ate":1.17,"dep":0.17,"qp":0.92,"tri":637,"a":1.88,"tend":-1.0},{"ar":"CH","di":"História","to":"Cultura, religião, patrimônio e memória","n":32,"ate":1.44,"dep":1.0,"qp":1.33,"tri":573,"a":1.96,"tend":-0.44},{"ar":"CH","di":"História","to":"Ditadura militar e redemocratização no Brasil","n":15,"ate":0.56,"dep":0.83,"qp":0.62,"tri":625,"a":2.24,"tend":0.27},{"ar":"CH","di":"História","to":"Ditaduras e história da América Latina","n":2,"ate":0.06,"dep":0.17,"qp":0.08,"tri":572,"a":1.66,"tend":0.11},{"ar":"CH","di":"História","to":"Economia, Estado, instituições e políticas públicas","n":19,"ate":0.72,"dep":1.0,"qp":0.79,"tri":611,"a":2.27,"tend":0.28},{"ar":"CH","di":"História","to":"Era Vargas e Estado Novo","n":20,"ate":0.83,"dep":0.83,"qp":0.83,"tri":610,"a":2.29,"tend":0.0},{"ar":"CH","di":"História","to":"Escravidão, tráfico atlântico e resistência negra","n":38,"ate":1.56,"dep":1.67,"qp":1.58,"tri":590,"a":2.17,"tend":0.11},{"ar":"CH","di":"História","to":"Geopolítica, conflitos e relações internacionais na história","n":5,"ate":0.22,"dep":0.17,"qp":0.21,"tri":645,"a":2.35,"tend":-0.05},{"ar":"CH","di":"História","to":"História ambiental e relação sociedade-natureza","n":3,"ate":0.11,"dep":0.17,"qp":0.12,"tri":560,"a":1.96,"tend":0.06},{"ar":"CH","di":"História","to":"História e cultura africana","n":8,"ate":0.33,"dep":0.33,"qp":0.33,"tri":607,"a":2.67,"tend":0.0},{"ar":"CH","di":"História","to":"Idade Média e transição para a Modernidade","n":19,"ate":0.89,"dep":0.5,"qp":0.79,"tri":646,"a":1.85,"tend":-0.39},{"ar":"CH","di":"História","to":"Imperialismo, colonialismo e descolonização na África e Ásia","n":7,"ate":0.39,"dep":0.0,"qp":0.29,"tri":593,"a":2.61,"tend":-0.39},{"ar":"CH","di":"História","to":"Movimentos culturais, ciência e tecnologia na história","n":19,"ate":0.44,"dep":1.83,"qp":0.79,"tri":607,"a":2.1,"tend":1.39},{"ar":"CH","di":"História","to":"Movimentos sociais, cidadania e luta por direitos","n":20,"ate":0.56,"dep":1.67,"qp":0.83,"tri":569,"a":2.45,"tend":1.11},{"ar":"CH","di":"História","to":"Povos indígenas: história, cultura e direitos","n":6,"ate":0.22,"dep":0.33,"qp":0.25,"tri":575,"a":1.97,"tend":0.11},{"ar":"CH","di":"História","to":"Primeira República e República Velha","n":12,"ate":0.44,"dep":0.67,"qp":0.5,"tri":615,"a":2.54,"tend":0.23},{"ar":"CH","di":"História","to":"Questão agrária e conflitos no campo","n":4,"ate":0.22,"dep":0.0,"qp":0.17,"tri":625,"a":1.71,"tend":-0.22},{"ar":"CH","di":"História","to":"Revolução Industrial, capitalismo e movimento operário","n":22,"ate":1.0,"dep":0.67,"qp":0.92,"tri":613,"a":1.97,"tend":-0.33},{"ar":"CH","di":"História","to":"Revoluções burguesas, Iluminismo e Estado moderno","n":14,"ate":0.61,"dep":0.5,"qp":0.58,"tri":611,"a":2.48,"tend":-0.11},{"ar":"CH","di":"História","to":"Século XX: guerras mundiais, totalitarismos e Guerra Fria","n":12,"ate":0.61,"dep":0.17,"qp":0.5,"tri":610,"a":2.71,"tend":-0.44},{"ar":"CH","di":"Sociologia","to":"Cidadania, democracia e Estado","n":18,"ate":0.78,"dep":0.67,"qp":0.75,"tri":580,"a":2.28,"tend":-0.11},{"ar":"CH","di":"Sociologia","to":"Corpo, saúde e comportamento","n":3,"ate":0.11,"dep":0.17,"qp":0.12,"tri":514,"a":1.85,"tend":0.06},{"ar":"CH","di":"Sociologia","to":"Cultura, identidade e diversidade cultural","n":16,"ate":0.67,"dep":0.67,"qp":0.67,"tri":569,"a":2.21,"tend":0.0},{"ar":"CH","di":"Sociologia","to":"Desigualdade social, classes e estratificação","n":10,"ate":0.5,"dep":0.17,"qp":0.42,"tri":545,"a":2.14,"tend":-0.33},{"ar":"CH","di":"Sociologia","to":"Espaço urbano, modos de vida e cotidiano","n":4,"ate":0.06,"dep":0.5,"qp":0.17,"tri":569,"a":2.56,"tend":0.44},{"ar":"CH","di":"Sociologia","to":"Globalização, tecnologia e sociedade em rede","n":6,"ate":0.22,"dep":0.33,"qp":0.25,"tri":596,"a":2.25,"tend":0.11},{"ar":"CH","di":"Sociologia","to":"Gênero, sexualidade e feminismos","n":14,"ate":0.44,"dep":1.0,"qp":0.58,"tri":558,"a":2.24,"tend":0.56},{"ar":"CH","di":"Sociologia","to":"Indústria cultural, mídia e consumo","n":21,"ate":0.67,"dep":1.5,"qp":0.88,"tri":565,"a":2.34,"tend":0.83},{"ar":"CH","di":"Sociologia","to":"Migrações, população e sociedades multiétnicas","n":3,"ate":0.11,"dep":0.17,"qp":0.12,"tri":597,"a":3.23,"tend":0.06},{"ar":"CH","di":"Sociologia","to":"Movimentos sociais e luta por direitos","n":17,"ate":0.67,"dep":0.83,"qp":0.71,"tri":577,"a":2.18,"tend":0.16},{"ar":"CH","di":"Sociologia","to":"Questão agrária e conflitos por terra","n":3,"ate":0.17,"dep":0.0,"qp":0.12,"tri":654,"a":1.91,"tend":-0.17},{"ar":"CH","di":"Sociologia","to":"Questões ambientais e sociedade","n":2,"ate":0.06,"dep":0.17,"qp":0.08,"tri":630,"a":1.89,"tend":0.11},{"ar":"CH","di":"Sociologia","to":"Racismo, relações étnico-raciais e ações afirmativas","n":26,"ate":1.11,"dep":1.0,"qp":1.08,"tri":548,"a":2.34,"tend":-0.11},{"ar":"CH","di":"Sociologia","to":"Religião, religiosidade e secularização","n":6,"ate":0.11,"dep":0.67,"qp":0.25,"tri":617,"a":2.36,"tend":0.56},{"ar":"CH","di":"Sociologia","to":"Teoria sociológica clássica e conceitos fundantes","n":13,"ate":0.67,"dep":0.17,"qp":0.54,"tri":648,"a":2.07,"tend":-0.5},{"ar":"CH","di":"Sociologia","to":"Trabalho, capitalismo e transformações produtivas","n":31,"ate":1.28,"dep":1.33,"qp":1.29,"tri":584,"a":2.14,"tend":0.05},{"ar":"CN","di":"Biologia","to":"Bioquímica: água, sais, proteínas e enzimas","n":9,"ate":0.5,"dep":0.0,"qp":0.38,"tri":583,"a":2.54,"tend":-0.5},{"ar":"CN","di":"Biologia","to":"Biotecnologia e engenharia genética","n":23,"ate":0.89,"dep":1.17,"qp":0.96,"tri":629,"a":2.4,"tend":0.28},{"ar":"CN","di":"Biologia","to":"Botânica: fisiologia e anatomia vegetal","n":36,"ate":1.5,"dep":1.5,"qp":1.5,"tri":633,"a":2.21,"tend":0.0},{"ar":"CN","di":"Biologia","to":"Citologia: célula, membranas, organelas e divisão celular","n":28,"ate":1.11,"dep":1.33,"qp":1.17,"tri":628,"a":2.63,"tend":0.22},{"ar":"CN","di":"Biologia","to":"Ecologia: ciclos biogeoquímicos e fluxo de energia","n":24,"ate":1.11,"dep":0.67,"qp":1.0,"tri":617,"a":2.13,"tend":-0.44},{"ar":"CN","di":"Biologia","to":"Ecologia: relações ecológicas e cadeias alimentares","n":29,"ate":1.0,"dep":1.83,"qp":1.21,"tri":572,"a":2.1,"tend":0.83},{"ar":"CN","di":"Biologia","to":"Evolução, filogenia e classificação dos seres vivos","n":28,"ate":1.28,"dep":0.83,"qp":1.17,"tri":591,"a":2.0,"tend":-0.45},{"ar":"CN","di":"Biologia","to":"Fisiologia humana e animal: sistemas do corpo","n":30,"ate":1.17,"dep":1.5,"qp":1.25,"tri":615,"a":1.91,"tend":0.33},{"ar":"CN","di":"Biologia","to":"Genética e hereditariedade","n":50,"ate":2.22,"dep":1.67,"qp":2.08,"tri":614,"a":2.45,"tend":-0.55},{"ar":"CN","di":"Biologia","to":"Impacto ambiental, poluição e conservação","n":35,"ate":1.22,"dep":2.17,"qp":1.46,"tri":581,"a":2.18,"tend":0.95},{"ar":"CN","di":"Biologia","to":"Metabolismo celular: fotossíntese, respiração e fermentação","n":17,"ate":0.72,"dep":0.67,"qp":0.71,"tri":656,"a":2.04,"tend":-0.05},{"ar":"CN","di":"Biologia","to":"Microbiologia, vírus, fungos e reinos","n":19,"ate":0.61,"dep":1.33,"qp":0.79,"tri":581,"a":2.47,"tend":0.72},{"ar":"CN","di":"Biologia","to":"Reprodução e desenvolvimento embrionário","n":3,"ate":0.0,"dep":0.5,"qp":0.12,"tri":606,"a":1.56,"tend":0.5},{"ar":"CN","di":"Biologia","to":"Saúde, doenças, epidemiologia e prevenção","n":40,"ate":1.67,"dep":1.67,"qp":1.67,"tri":599,"a":1.93,"tend":0.0},{"ar":"CN","di":"Biologia","to":"Zoologia e diversidade animal","n":6,"ate":0.22,"dep":0.33,"qp":0.25,"tri":602,"a":2.17,"tend":0.11},{"ar":"CN","di":"Física","to":"Cinemática: movimento, velocidade e aceleração","n":20,"ate":0.72,"dep":1.17,"qp":0.83,"tri":664,"a":2.45,"tend":0.45},{"ar":"CN","di":"Física","to":"Dinâmica: leis de Newton, forças e atrito","n":13,"ate":0.5,"dep":0.67,"qp":0.54,"tri":631,"a":3.05,"tend":0.17},{"ar":"CN","di":"Física","to":"Eletrodinâmica: circuitos, potência e consumo","n":65,"ate":2.67,"dep":2.83,"qp":2.71,"tri":676,"a":2.6,"tend":0.16},{"ar":"CN","di":"Física","to":"Eletromagnetismo e indução","n":20,"ate":0.78,"dep":1.0,"qp":0.83,"tri":643,"a":2.52,"tend":0.22},{"ar":"CN","di":"Física","to":"Eletrostática","n":7,"ate":0.28,"dep":0.33,"qp":0.29,"tri":647,"a":2.18,"tend":0.05},{"ar":"CN","di":"Física","to":"Energia: fontes, geração e transmissão","n":9,"ate":0.39,"dep":0.33,"qp":0.38,"tri":668,"a":1.88,"tend":-0.06},{"ar":"CN","di":"Física","to":"Estática e equilíbrio","n":8,"ate":0.33,"dep":0.33,"qp":0.33,"tri":653,"a":2.0,"tend":0.0},{"ar":"CN","di":"Física","to":"Física moderna: radiação, radioatividade e efeito fotoelétrico","n":28,"ate":0.94,"dep":1.83,"qp":1.17,"tri":642,"a":2.38,"tend":0.89},{"ar":"CN","di":"Física","to":"Gravitação e astronomia","n":14,"ate":0.67,"dep":0.33,"qp":0.58,"tri":625,"a":2.22,"tend":-0.34},{"ar":"CN","di":"Física","to":"Hidrostática: pressão, empuxo e densidade","n":19,"ate":0.89,"dep":0.5,"qp":0.79,"tri":652,"a":2.38,"tend":-0.39},{"ar":"CN","di":"Física","to":"Impulso, quantidade de movimento e colisões","n":9,"ate":0.39,"dep":0.33,"qp":0.38,"tri":668,"a":2.51,"tend":-0.06},{"ar":"CN","di":"Física","to":"Movimento circular","n":7,"ate":0.28,"dep":0.33,"qp":0.29,"tri":673,"a":2.24,"tend":0.05},{"ar":"CN","di":"Física","to":"Ondulatória: ondas e fenômenos ondulatórios","n":18,"ate":0.78,"dep":0.67,"qp":0.75,"tri":630,"a":2.32,"tend":-0.11},{"ar":"CN","di":"Física","to":"Ondulatória: som e acústica","n":23,"ate":0.94,"dep":1.0,"qp":0.96,"tri":635,"a":2.39,"tend":0.06},{"ar":"CN","di":"Física","to":"Oscilações, MHS e elasticidade","n":7,"ate":0.33,"dep":0.17,"qp":0.29,"tri":1601,"a":2.82,"tend":-0.16},{"ar":"CN","di":"Física","to":"Termodinâmica e máquinas térmicas","n":12,"ate":0.39,"dep":0.83,"qp":0.5,"tri":676,"a":2.45,"tend":0.44},{"ar":"CN","di":"Física","to":"Termologia: calor, temperatura e trocas de calor","n":35,"ate":1.56,"dep":1.17,"qp":1.46,"tri":651,"a":2.58,"tend":-0.39},{"ar":"CN","di":"Física","to":"Trabalho, energia e potência mecânica","n":9,"ate":0.5,"dep":0.0,"qp":0.38,"tri":649,"a":2.4,"tend":-0.5},{"ar":"CN","di":"Física","to":"Vetores e grandezas físicas","n":1,"ate":0.06,"dep":0.0,"qp":0.04,"tri":596,"a":0.51,"tend":-0.06},{"ar":"CN","di":"Física","to":"Óptica: reflexão, refração, lentes e visão","n":24,"ate":1.06,"dep":0.83,"qp":1.0,"tri":670,"a":2.21,"tend":-0.23},{"ar":"CN","di":"Química","to":"Análise química e controle de qualidade","n":6,"ate":0.33,"dep":0.0,"qp":0.25,"tri":680,"a":2.36,"tend":-0.33},{"ar":"CN","di":"Química","to":"Bioquímica e química de alimentos","n":13,"ate":0.67,"dep":0.17,"qp":0.54,"tri":583,"a":2.18,"tend":-0.5},{"ar":"CN","di":"Química","to":"Cinética química e equilíbrio químico","n":8,"ate":0.28,"dep":0.5,"qp":0.33,"tri":637,"a":2.46,"tend":0.22},{"ar":"CN","di":"Química","to":"Combustíveis, biocombustíveis e fontes de energia","n":20,"ate":0.89,"dep":0.67,"qp":0.83,"tri":635,"a":2.29,"tend":-0.22},{"ar":"CN","di":"Química","to":"Eletroquímica, pilhas, eletrólise e corrosão","n":27,"ate":1.22,"dep":0.83,"qp":1.12,"tri":703,"a":2.6,"tend":-0.39},{"ar":"CN","di":"Química","to":"Estequiometria e cálculos químicos","n":24,"ate":0.89,"dep":1.33,"qp":1.0,"tri":690,"a":2.72,"tend":0.44},{"ar":"CN","di":"Química","to":"Estrutura atômica, tabela periódica e ligações","n":10,"ate":0.44,"dep":0.33,"qp":0.42,"tri":654,"a":2.53,"tend":-0.11},{"ar":"CN","di":"Química","to":"Materiais, propriedades da matéria e separação de misturas","n":25,"ate":1.11,"dep":0.83,"qp":1.04,"tri":612,"a":2.37,"tend":-0.28},{"ar":"CN","di":"Química","to":"Metalurgia, mineração e processos industriais","n":12,"ate":0.39,"dep":0.83,"qp":0.5,"tri":618,"a":2.35,"tend":0.44},{"ar":"CN","di":"Química","to":"Polímeros e materiais","n":18,"ate":0.83,"dep":0.5,"qp":0.75,"tri":605,"a":2.21,"tend":-0.33},{"ar":"CN","di":"Química","to":"Química ambiental: poluição, resíduos e tratamento","n":36,"ate":1.44,"dep":1.67,"qp":1.5,"tri":624,"a":2.33,"tend":0.23},{"ar":"CN","di":"Química","to":"Química do cotidiano e produtos de uso diário","n":7,"ate":0.33,"dep":0.17,"qp":0.29,"tri":618,"a":2.08,"tend":-0.16},{"ar":"CN","di":"Química","to":"Química orgânica: funções, isomeria e reações","n":48,"ate":2.0,"dep":2.0,"qp":2.0,"tri":646,"a":2.79,"tend":0.0},{"ar":"CN","di":"Química","to":"Radioatividade e química nuclear","n":12,"ate":0.56,"dep":0.33,"qp":0.5,"tri":595,"a":2.69,"tend":-0.23},{"ar":"CN","di":"Química","to":"Reações químicas e transformações da matéria","n":11,"ate":0.61,"dep":0.0,"qp":0.46,"tri":628,"a":1.96,"tend":-0.61},{"ar":"CN","di":"Química","to":"Soluções, concentração e solubilidade","n":32,"ate":1.33,"dep":1.33,"qp":1.33,"tri":645,"a":2.42,"tend":0.0},{"ar":"CN","di":"Química","to":"Termoquímica e energia nas reações","n":10,"ate":0.5,"dep":0.17,"qp":0.42,"tri":632,"a":3.41,"tend":-0.33},{"ar":"CN","di":"Química","to":"Ácidos, bases, pH e neutralização","n":36,"ate":1.5,"dep":1.5,"qp":1.5,"tri":648,"a":2.7,"tend":0.0},{"ar":"LC","di":"Espanhol","to":"Leitura e compreensão: ideia central, inferência e propósito","n":49,"ate":2.17,"dep":1.67,"qp":2.04,"tri":581,"a":2.22,"tend":-0.5},{"ar":"LC","di":"Espanhol","to":"Léxico, vocabulário e aspectos linguísticos","n":4,"ate":0.17,"dep":0.17,"qp":0.17,"tri":616,"a":1.53,"tend":0.0},{"ar":"LC","di":"Espanhol","to":"Texto literário e narrativo em língua estrangeira","n":13,"ate":0.61,"dep":0.33,"qp":0.54,"tri":605,"a":2.25,"tend":-0.28},{"ar":"LC","di":"Espanhol","to":"Texto poético e canção em língua estrangeira","n":30,"ate":1.11,"dep":1.67,"qp":1.25,"tri":582,"a":1.94,"tend":0.56},{"ar":"LC","di":"Espanhol","to":"Textos multimodais, publicitários e digitais em língua estrangeira","n":14,"ate":0.56,"dep":0.67,"qp":0.58,"tri":535,"a":2.31,"tend":0.11},{"ar":"LC","di":"Espanhol","to":"Variação linguística e identidade em língua estrangeira","n":10,"ate":0.39,"dep":0.5,"qp":0.42,"tri":570,"a":2.41,"tend":0.11},{"ar":"LC","di":"Inglês","to":"Leitura e compreensão: ideia central, inferência e propósito","n":71,"ate":3.11,"dep":2.5,"qp":2.96,"tri":570,"a":3.0,"tend":-0.61},{"ar":"LC","di":"Inglês","to":"Léxico, vocabulário e aspectos linguísticos","n":2,"ate":0.11,"dep":0.0,"qp":0.08,"tri":537,"a":3.57,"tend":-0.11},{"ar":"LC","di":"Inglês","to":"Texto literário e narrativo em língua estrangeira","n":9,"ate":0.39,"dep":0.33,"qp":0.38,"tri":593,"a":3.0,"tend":-0.06},{"ar":"LC","di":"Inglês","to":"Texto poético e canção em língua estrangeira","n":24,"ate":0.83,"dep":1.5,"qp":1.0,"tri":583,"a":2.89,"tend":0.67},{"ar":"LC","di":"Inglês","to":"Textos multimodais, publicitários e digitais em língua estrangeira","n":11,"ate":0.44,"dep":0.5,"qp":0.46,"tri":553,"a":2.63,"tend":0.06},{"ar":"LC","di":"Inglês","to":"Variação linguística e identidade em língua estrangeira","n":3,"ate":0.11,"dep":0.17,"qp":0.12,"tri":583,"a":4.04,"tend":0.06},{"ar":"LC","di":"Português e Artes","to":"Argumentação, tese e estratégias persuasivas","n":56,"ate":2.33,"dep":2.33,"qp":2.33,"tri":577,"a":2.33,"tend":0.0},{"ar":"LC","di":"Português e Artes","to":"Artes visuais, artes plásticas e patrimônio artístico","n":86,"ate":3.56,"dep":3.67,"qp":3.58,"tri":610,"a":2.15,"tend":0.11},{"ar":"LC","di":"Português e Artes","to":"Coesão, coerência, referenciação e progressão textual","n":10,"ate":0.5,"dep":0.17,"qp":0.42,"tri":608,"a":2.17,"tend":-0.33},{"ar":"LC","di":"Português e Artes","to":"Dança, corpo e práticas corporais","n":21,"ate":0.89,"dep":0.83,"qp":0.88,"tri":572,"a":2.29,"tend":-0.06},{"ar":"LC","di":"Português e Artes","to":"Divulgação científica e textos de ciência/ambiente","n":27,"ate":1.11,"dep":1.17,"qp":1.12,"tri":552,"a":2.18,"tend":0.06},{"ar":"LC","di":"Português e Artes","to":"Educação Física: esporte, saúde e exercício","n":58,"ate":2.17,"dep":3.17,"qp":2.42,"tri":538,"a":2.19,"tend":1.0},{"ar":"LC","di":"Português e Artes","to":"Figuras de linguagem, ironia e humor","n":39,"ate":1.78,"dep":1.17,"qp":1.62,"tri":591,"a":1.99,"tend":-0.61},{"ar":"LC","di":"Português e Artes","to":"Funções da linguagem e metalinguagem","n":25,"ate":1.06,"dep":1.0,"qp":1.04,"tri":599,"a":2.31,"tend":-0.06},{"ar":"LC","di":"Português e Artes","to":"Gêneros textuais e propósito comunicativo","n":56,"ate":2.44,"dep":2.0,"qp":2.33,"tri":580,"a":2.23,"tend":-0.44},{"ar":"LC","di":"Português e Artes","to":"Identidade, representação e cultura nos textos","n":2,"ate":0.11,"dep":0.0,"qp":0.08,"tri":554,"a":3.12,"tend":-0.11},{"ar":"LC","di":"Português e Artes","to":"Literatura: movimentos e periodização literária","n":24,"ate":1.17,"dep":0.5,"qp":1.0,"tri":622,"a":1.97,"tend":-0.67},{"ar":"LC","di":"Português e Artes","to":"Literatura: poesia e texto poético","n":56,"ate":2.22,"dep":2.67,"qp":2.33,"tri":639,"a":2.06,"tend":0.45},{"ar":"LC","di":"Português e Artes","to":"Literatura: prosa, conto, romance e crônica","n":107,"ate":4.17,"dep":5.33,"qp":4.46,"tri":602,"a":2.03,"tend":1.16},{"ar":"LC","di":"Português e Artes","to":"Literatura: teatro e texto dramático","n":11,"ate":0.61,"dep":0.0,"qp":0.46,"tri":566,"a":2.58,"tend":-0.61},{"ar":"LC","di":"Português e Artes","to":"Léxico, formação de palavras e semântica","n":29,"ate":1.06,"dep":1.67,"qp":1.21,"tri":559,"a":2.24,"tend":0.61},{"ar":"LC","di":"Português e Artes","to":"Música, canção e cultura popular","n":61,"ate":2.28,"dep":3.33,"qp":2.54,"tri":578,"a":2.01,"tend":1.05},{"ar":"LC","di":"Português e Artes","to":"Publicidade, campanhas e textos multimodais","n":72,"ate":3.11,"dep":2.67,"qp":3.0,"tri":534,"a":1.87,"tend":-0.44},{"ar":"LC","di":"Português e Artes","to":"Sintaxe, morfologia, pontuação e gramática","n":20,"ate":0.94,"dep":0.5,"qp":0.83,"tri":584,"a":2.15,"tend":-0.44},{"ar":"LC","di":"Português e Artes","to":"Tecnologias da informação, gêneros digitais e redes sociais","n":102,"ate":4.39,"dep":3.83,"qp":4.25,"tri":564,"a":2.2,"tend":-0.56},{"ar":"LC","di":"Português e Artes","to":"Variação linguística, norma e preconceito linguístico","n":98,"ate":4.11,"dep":4.0,"qp":4.08,"tri":571,"a":2.29,"tend":-0.11},{"ar":"MT","di":"Matemática","to":"Análise combinatória e contagem","n":50,"ate":2.17,"dep":1.83,"qp":2.08,"tri":762,"a":1.92,"tend":-0.34},{"ar":"MT","di":"Matemática","to":"Aritmética, operações e representação numérica","n":59,"ate":2.72,"dep":1.67,"qp":2.46,"tri":661,"a":1.75,"tend":-1.05},{"ar":"MT","di":"Matemática","to":"Estatística: amostragem, projeção e interpretação de dados","n":84,"ate":3.78,"dep":2.67,"qp":3.5,"tri":669,"a":2.04,"tend":-1.11},{"ar":"MT","di":"Matemática","to":"Estatística: médias e medidas de tendência central","n":60,"ate":2.61,"dep":2.17,"qp":2.5,"tri":664,"a":2.08,"tend":-0.44},{"ar":"MT","di":"Matemática","to":"Função afim (1º grau)","n":20,"ate":0.61,"dep":1.5,"qp":0.83,"tri":623,"a":1.86,"tend":0.89},{"ar":"MT","di":"Matemática","to":"Função exponencial e logaritmo","n":28,"ate":1.17,"dep":1.17,"qp":1.17,"tri":718,"a":2.32,"tend":0.0},{"ar":"MT","di":"Matemática","to":"Função quadrática (2º grau)","n":19,"ate":0.89,"dep":0.5,"qp":0.79,"tri":768,"a":2.28,"tend":-0.39},{"ar":"MT","di":"Matemática","to":"Funções trigonométricas e periodicidade","n":10,"ate":0.39,"dep":0.5,"qp":0.42,"tri":751,"a":2.0,"tend":0.11},{"ar":"MT","di":"Matemática","to":"Funções: conceito geral e modelagem","n":60,"ate":2.06,"dep":3.83,"qp":2.5,"tri":704,"a":2.25,"tend":1.77},{"ar":"MT","di":"Matemática","to":"Geometria analítica e localização espacial","n":34,"ate":1.5,"dep":1.17,"qp":1.42,"tri":694,"a":1.9,"tend":-0.33},{"ar":"MT","di":"Matemática","to":"Geometria espacial: sólidos, planificação e poliedros","n":32,"ate":1.5,"dep":0.83,"qp":1.33,"tri":679,"a":1.76,"tend":-0.67},{"ar":"MT","di":"Matemática","to":"Geometria espacial: volume e capacidade","n":78,"ate":2.94,"dep":4.17,"qp":3.25,"tri":709,"a":2.47,"tend":1.23},{"ar":"MT","di":"Matemática","to":"Geometria plana: área, perímetro e figuras","n":75,"ate":3.11,"dep":3.17,"qp":3.12,"tri":742,"a":1.98,"tend":0.06},{"ar":"MT","di":"Matemática","to":"Grandezas, unidades, escalas e estimativa","n":78,"ate":3.44,"dep":2.67,"qp":3.25,"tri":667,"a":2.16,"tend":-0.77},{"ar":"MT","di":"Matemática","to":"Leitura e interpretação de gráficos","n":60,"ate":2.72,"dep":1.83,"qp":2.5,"tri":656,"a":1.98,"tend":-0.89},{"ar":"MT","di":"Matemática","to":"Porcentagem, juros e matemática financeira","n":66,"ate":2.56,"dep":3.33,"qp":2.75,"tri":697,"a":2.07,"tend":0.77},{"ar":"MT","di":"Matemática","to":"Probabilidade","n":56,"ate":2.39,"dep":2.17,"qp":2.33,"tri":744,"a":2.16,"tend":-0.22},{"ar":"MT","di":"Matemática","to":"Razão, proporção, regra de três e variação de grandezas","n":149,"ate":5.94,"dep":7.0,"qp":6.21,"tri":690,"a":2.09,"tend":1.06},{"ar":"MT","di":"Matemática","to":"Semelhança, Pitágoras e trigonometria no triângulo","n":18,"ate":0.83,"dep":0.5,"qp":0.75,"tri":703,"a":2.27,"tend":-0.33},{"ar":"MT","di":"Matemática","to":"Sequências e progressões (PA e PG)","n":19,"ate":0.5,"dep":1.67,"qp":0.79,"tri":664,"a":2.07,"tend":1.17},{"ar":"MT","di":"Matemática","to":"Álgebra: equações, sistemas, inequações e matrizes","n":25,"ate":1.17,"dep":0.67,"qp":1.04,"tri":641,"a":2.11,"tend":-0.5}],"disciplinas":[{"ar":"CH","di":"Filosofia","n":167,"qp":6.96,"ntop":9},{"ar":"CH","di":"Geografia","n":362,"qp":15.08,"ntop":14},{"ar":"CH","di":"História","n":358,"qp":14.92,"ntop":22},{"ar":"CH","di":"Sociologia","n":193,"qp":8.04,"ntop":16},{"ar":"CN","di":"Biologia","n":377,"qp":15.71,"ntop":15},{"ar":"CN","di":"Física","n":348,"qp":14.5,"ntop":20},{"ar":"CN","di":"Química","n":355,"qp":14.79,"ntop":18},{"ar":"LC","di":"Espanhol","n":120,"qp":5.0,"ntop":6},{"ar":"LC","di":"Inglês","n":120,"qp":5.0,"ntop":6},{"ar":"LC","di":"Português e Artes","n":960,"qp":40.0,"ntop":20},{"ar":"MT","di":"Matemática","n":1080,"qp":45.0,"ntop":21}],"eixos":[{"eixo":"Cultura, arte e patrimônio","MT":9,"CN":91,"CH":310,"LC":784},{"eixo":"Cidadania, direitos e diversidade","MT":3,"CN":42,"CH":739,"LC":141},{"eixo":"Ciência, tecnologia e mundo digital","MT":23,"CN":643,"CH":86,"LC":156},{"eixo":"Meio ambiente e sustentabilidade","MT":39,"CN":447,"CH":197,"LC":29},{"eixo":"Trabalho, economia e produção","MT":142,"CN":63,"CH":208,"LC":149},{"eixo":"Espaço urbano e território","MT":14,"CN":49,"CH":232,"LC":48},{"eixo":"Saúde, corpo e qualidade de vida","MT":39,"CN":186,"CH":27,"LC":104}],"serie":{"CH|Agricultura, agronegócio e espaço agrário":[1,0,3,3,5,3,1,5,6,2,7,3,3],"CH|Antiguidade Clássica e Oriental":[1,2,1,2,1,1,1,4,1,0,1,2,2],"CH|Brasil Colônia: colonização, economia colonial e conquista da América":[3,3,2,3,1,6,1,5,5,4,4,2,1],"CH|Brasil Império: independência, Estado nacional e conflitos":[1,2,2,3,0,2,3,1,3,4,0,0,1],"CH|Cartografia, escalas e representação do espaço":[2,1,2,2,1,2,2,1,2,5,2,3,1],"CH|Cidadania, democracia e Estado":[1,0,0,0,6,3,1,1,1,1,2,1,1],"CH|Clima, atmosfera e domínios naturais":[2,1,3,1,5,3,3,1,3,1,5,5,3],"CH|Corpo, existência, subjetividade e tempo":[0,0,0,3,2,1,3,2,2,3,0,2,1],"CH|Corpo, saúde e comportamento":[0,0,0,0,0,1,0,0,0,1,0,1,0],"CH|Cultura, identidade e diversidade cultural":[0,1,0,0,1,1,3,3,1,2,0,2,2],"CH|Cultura, religião, patrimônio e memória":[2,2,1,4,3,1,5,2,2,4,3,1,2],"CH|Cultura, sociedade e crítica":[0,0,1,1,0,1,0,1,0,0,0,0,0],"CH|Democracia, cidadania e participação":[0,0,1,1,1,1,1,0,1,0,1,0,1],"CH|Demografia, migrações e estrutura populacional":[1,1,0,2,2,4,2,2,3,2,2,3,1],"CH|Desigualdade social, classes e estratificação":[0,0,0,1,0,2,1,0,2,3,1,0,0],"CH|Ditadura militar e redemocratização no Brasil":[1,2,2,2,1,1,0,0,0,1,3,1,1],"CH|Ditaduras e história da América Latina":[0,0,0,1,0,0,0,0,0,0,0,0,1],"CH|Economia, Estado, instituições e políticas públicas":[0,0,1,1,2,4,1,3,0,1,3,1,2],"CH|Era Vargas e Estado Novo":[1,0,2,3,3,2,1,0,2,1,2,1,2],"CH|Escravidão, tráfico atlântico e resistência negra":[3,2,4,5,3,1,2,3,2,3,2,4,4],"CH|Espaço urbano, modos de vida e cotidiano":[0,0,0,0,0,0,1,0,0,0,0,2,1],"CH|Estética, arte e técnica":[0,0,1,1,0,0,1,1,0,1,0,1,0],"CH|Filosofia política: Estado, poder e contratualismo":[3,0,2,1,1,2,0,1,1,6,1,1,6],"CH|Filosofia, ciência e natureza":[1,1,0,0,1,1,2,3,0,2,1,1,1],"CH|Geopolítica, blocos econômicos e conflitos internacionais":[1,1,0,2,4,3,3,2,1,4,3,1,5],"CH|Geopolítica, conflitos e relações internacionais na história":[0,0,0,1,0,1,1,0,0,1,1,0,0],"CH|Globalização, redes e novas tecnologias":[1,0,8,1,0,1,0,1,0,1,1,1,1],"CH|Globalização, tecnologia e sociedade em rede":[1,0,0,1,0,1,0,0,0,1,1,1,0],"CH|Gênero, sexualidade e feminismos":[1,0,1,1,2,1,1,0,0,1,2,0,4],"CH|História ambiental e relação sociedade-natureza":[0,0,1,1,0,0,0,0,0,0,1,0,0],"CH|História e cultura africana":[1,0,0,0,1,0,1,1,2,0,2,0,0],"CH|Idade Média e transição para a Modernidade":[1,1,5,0,1,1,1,1,4,1,0,2,1],"CH|Imperialismo, colonialismo e descolonização na África e Ásia":[1,0,3,1,0,0,0,0,2,0,0,0,0],"CH|Indústria cultural, mídia e consumo":[0,0,1,1,1,3,2,1,1,2,2,5,2],"CH|Indústria, estruturas produtivas e circulação":[1,0,0,0,3,1,2,4,2,1,1,0,0],"CH|Lógica, linguagem e argumentação":[0,0,0,0,1,1,0,1,0,1,1,1,1],"CH|Migrações, população e sociedades multiétnicas":[0,0,0,0,1,1,0,0,0,0,0,0,1],"CH|Movimentos culturais, ciência e tecnologia na história":[0,1,0,0,1,1,1,2,1,1,4,3,4],"CH|Movimentos sociais e luta por direitos":[0,2,2,3,0,0,2,1,0,2,1,3,1],"CH|Movimentos sociais, cidadania e luta por direitos":[0,0,2,0,0,1,1,3,3,0,3,6,1],"CH|Povos indígenas: história, cultura e direitos":[0,0,0,1,2,0,1,0,0,0,1,0,1],"CH|Primeira República e República Velha":[1,2,0,0,0,2,1,0,1,1,1,1,2],"CH|Questão agrária e conflitos no campo":[0,1,0,0,1,0,1,1,0,0,0,0,0],"CH|Questão agrária e conflitos por terra":[0,0,0,0,1,0,0,1,0,1,0,0,0],"CH|Questões ambientais e sociedade":[0,0,1,0,0,0,0,0,0,0,0,1,0],"CH|Questões ambientais, sustentabilidade e mudanças climáticas":[0,3,3,4,2,3,4,5,6,2,1,5,2],"CH|Racismo, relações étnico-raciais e ações afirmativas":[0,1,4,2,4,0,1,2,2,4,2,0,4],"CH|Recursos hídricos e bacias hidrográficas":[1,1,2,1,1,2,2,3,2,1,1,0,0],"CH|Recursos minerais, energéticos e matriz energética":[1,0,2,1,0,0,0,0,1,1,0,0,3],"CH|Relevo, geologia, solos e dinâmica da Terra":[1,1,4,1,8,4,4,5,3,4,3,2,2],"CH|Religião, religiosidade e secularização":[0,0,0,0,0,0,2,0,0,0,1,2,1],"CH|Revolução Industrial, capitalismo e movimento operário":[1,1,2,3,1,2,0,1,3,4,3,1,0],"CH|Revoluções burguesas, Iluminismo e Estado moderno":[0,0,1,1,3,2,2,0,2,0,2,1,0],"CH|Sociedade e natureza; saberes e povos tradicionais":[1,0,0,0,0,2,1,1,1,1,1,1,3],"CH|Século XX: guerras mundiais, totalitarismos e Guerra Fria":[1,1,2,1,2,1,3,0,0,0,0,0,1],"CH|Teoria do conhecimento e epistemologia":[2,2,5,4,2,2,3,4,3,0,1,5,0],"CH|Teoria sociológica clássica e conceitos fundantes":[1,0,3,2,1,1,1,1,1,1,0,0,1],"CH|Território, formação territorial e regionalização":[0,2,0,2,1,3,0,0,0,0,1,3,1],"CH|Trabalho, capitalismo e transformações produtivas":[1,1,1,3,0,1,3,3,6,4,4,3,1],"CH|Urbanização, rede urbana e problemas urbanos":[2,3,4,7,3,3,2,4,3,3,0,2,3],"CH|Ética, moral e justiça":[1,3,5,5,4,3,9,3,3,0,5,3,7],"CN|Análise química e controle de qualidade":[0,0,0,2,2,0,1,0,1,0,0,0,0],"CN|Bioquímica e química de alimentos":[0,0,0,1,0,4,2,1,2,2,1,0,0],"CN|Bioquímica: água, sais, proteínas e enzimas":[0,2,0,0,2,2,1,0,1,1,0,0,0],"CN|Biotecnologia e engenharia genética":[0,2,2,0,3,1,3,1,0,4,1,3,3],"CN|Botânica: fisiologia e anatomia vegetal":[0,1,1,2,1,3,5,4,7,3,4,2,3],"CN|Cinemática: movimento, velocidade e aceleração":[0,0,0,2,2,1,2,3,3,0,3,2,2],"CN|Cinética química e equilíbrio químico":[0,1,2,0,0,0,0,2,0,0,0,1,2],"CN|Citologia: célula, membranas, organelas e divisão celular":[2,1,1,3,4,2,2,1,1,3,3,2,3],"CN|Combustíveis, biocombustíveis e fontes de energia":[0,1,0,0,1,1,4,4,4,1,0,2,2],"CN|Dinâmica: leis de Newton, forças e atrito":[2,1,1,0,0,1,1,1,0,2,2,1,1],"CN|Ecologia: ciclos biogeoquímicos e fluxo de energia":[3,2,3,5,2,1,0,0,1,3,2,2,0],"CN|Ecologia: relações ecológicas e cadeias alimentares":[2,2,3,3,2,1,1,2,1,1,2,3,6],"CN|Eletrodinâmica: circuitos, potência e consumo":[4,1,3,5,6,6,1,5,9,8,4,6,7],"CN|Eletromagnetismo e indução":[1,1,2,1,2,1,2,1,2,1,4,0,2],"CN|Eletroquímica, pilhas, eletrólise e corrosão":[2,1,3,3,3,2,2,3,2,1,0,3,2],"CN|Eletrostática":[0,0,0,0,1,0,0,2,0,2,0,1,1],"CN|Energia: fontes, geração e transmissão":[0,0,0,2,1,0,1,0,2,1,1,1,0],"CN|Estequiometria e cálculos químicos":[2,1,3,1,1,1,0,1,5,1,2,3,3],"CN|Estrutura atômica, tabela periódica e ligações":[0,0,0,0,2,1,4,1,0,0,1,0,1],"CN|Estática e equilíbrio":[0,0,1,1,0,2,1,0,0,1,1,1,0],"CN|Evolução, filogenia e classificação dos seres vivos":[1,1,2,3,4,4,1,3,2,2,0,2,3],"CN|Fisiologia humana e animal: sistemas do corpo":[3,0,4,1,1,2,5,0,3,2,3,2,4],"CN|Física moderna: radiação, radioatividade e efeito fotoelétrico":[1,1,1,1,4,4,0,2,2,1,2,3,6],"CN|Genética e hereditariedade":[2,2,5,4,7,6,3,3,4,4,5,4,1],"CN|Gravitação e astronomia":[0,0,1,2,1,1,2,1,2,2,1,1,0],"CN|Hidrostática: pressão, empuxo e densidade":[2,1,2,0,1,3,1,4,1,1,2,0,1],"CN|Impacto ambiental, poluição e conservação":[0,1,1,3,3,1,3,4,3,3,6,3,4],"CN|Impulso, quantidade de movimento e colisões":[0,1,0,1,1,0,1,0,1,2,0,2,0],"CN|Materiais, propriedades da matéria e separação de misturas":[2,1,4,4,1,1,2,4,1,0,3,0,2],"CN|Metabolismo celular: fotossíntese, respiração e fermentação":[0,0,1,1,0,2,3,4,0,2,1,0,3],"CN|Metalurgia, mineração e processos industriais":[0,0,0,1,2,1,1,2,0,0,1,2,2],"CN|Microbiologia, vírus, fungos e reinos":[0,0,1,1,1,1,2,1,3,1,0,7,1],"CN|Movimento circular":[1,1,0,1,1,1,0,0,0,0,0,1,1],"CN|Ondulatória: ondas e fenômenos ondulatórios":[2,1,2,2,1,2,1,3,0,0,2,1,1],"CN|Ondulatória: som e acústica":[1,1,2,4,1,3,1,0,2,2,2,3,1],"CN|Oscilações, MHS e elasticidade":[0,1,2,0,1,2,0,0,0,0,0,1,0],"CN|Polímeros e materiais":[1,1,2,1,2,2,2,2,1,1,2,1,0],"CN|Química ambiental: poluição, resíduos e tratamento":[1,2,3,2,2,3,2,6,3,2,2,5,3],"CN|Química do cotidiano e produtos de uso diário":[0,1,0,1,0,1,1,0,1,1,1,0,0],"CN|Química orgânica: funções, isomeria e reações":[3,4,4,4,4,5,5,2,2,3,6,3,3],"CN|Radioatividade e química nuclear":[0,0,0,1,2,2,1,2,0,2,1,0,1],"CN|Reações químicas e transformações da matéria":[0,0,1,1,0,3,1,0,2,3,0,0,0],"CN|Reprodução e desenvolvimento embrionário":[0,0,0,0,0,0,0,0,0,0,2,0,1],"CN|Saúde, doenças, epidemiologia e prevenção":[2,1,5,4,1,2,3,4,4,4,3,3,4],"CN|Soluções, concentração e solubilidade":[1,1,6,4,1,2,2,2,2,3,4,3,1],"CN|Termodinâmica e máquinas térmicas":[0,1,2,2,1,0,0,1,0,0,2,2,1],"CN|Termologia: calor, temperatura e trocas de calor":[2,1,2,6,1,2,4,4,4,2,3,4,0],"CN|Termoquímica e energia nas reações":[0,0,1,1,3,1,1,0,1,1,0,0,1],"CN|Trabalho, energia e potência mecânica":[0,0,3,0,2,0,1,2,0,1,0,0,0],"CN|Vetores e grandezas físicas":[0,0,0,0,0,0,0,1,0,0,0,0,0],"CN|Zoologia e diversidade animal":[0,0,2,0,0,1,1,0,0,0,0,2,0],"CN|Ácidos, bases, pH e neutralização":[2,2,2,2,3,1,3,1,5,6,4,1,4],"CN|Óptica: reflexão, refração, lentes e visão":[0,2,4,1,3,1,4,0,0,4,1,1,3],"LC|Argumentação, tese e estratégias persuasivas":[2,4,5,5,2,2,3,4,8,7,4,2,8],"LC|Artes visuais, artes plásticas e patrimônio artístico":[3,2,8,7,10,10,6,3,8,7,6,9,7],"LC|Coesão, coerência, referenciação e progressão textual":[1,2,0,2,3,0,0,0,1,0,0,1,0],"LC|Dança, corpo e práticas corporais":[1,0,3,2,0,1,1,3,5,0,4,1,0],"LC|Divulgação científica e textos de ciência/ambiente":[0,0,2,1,1,0,4,8,1,3,1,2,4],"LC|Educação Física: esporte, saúde e exercício":[1,2,1,4,6,6,3,5,4,7,5,8,6],"LC|Figuras de linguagem, ironia e humor":[3,3,1,3,5,2,5,3,1,6,2,3,2],"LC|Funções da linguagem e metalinguagem":[2,1,3,6,2,0,0,1,2,2,3,3,0],"LC|Gêneros textuais e propósito comunicativo":[2,2,5,5,3,5,4,8,6,4,5,3,4],"LC|Identidade, representação e cultura nos textos":[0,0,0,0,0,0,1,1,0,0,0,0,0],"LC|Leitura e compreensão: ideia central, inferência e propósito":[5,4,11,9,12,13,11,8,12,10,5,10,10],"LC|Literatura: movimentos e periodização literária":[2,4,4,3,2,1,1,0,2,2,1,0,2],"LC|Literatura: poesia e texto poético":[2,0,6,5,4,7,5,7,4,0,5,5,6],"LC|Literatura: prosa, conto, romance e crônica":[2,2,3,4,6,18,13,6,10,11,11,11,10],"LC|Literatura: teatro e texto dramático":[1,1,1,2,3,1,0,1,1,0,0,0,0],"LC|Léxico, formação de palavras e semântica":[0,3,5,5,1,2,1,0,0,2,4,3,3],"LC|Léxico, vocabulário e aspectos linguísticos":[0,1,1,2,0,0,0,0,0,1,0,0,1],"LC|Música, canção e cultura popular":[2,3,4,2,4,2,6,8,4,6,9,6,5],"LC|Publicidade, campanhas e textos multimodais":[2,2,6,7,7,4,8,5,6,9,6,2,8],"LC|Sintaxe, morfologia, pontuação e gramática":[4,1,3,3,3,1,0,1,1,0,0,1,2],"LC|Tecnologias da informação, gêneros digitais e redes sociais":[6,4,7,7,9,10,12,10,6,8,6,11,6],"LC|Texto literário e narrativo em língua estrangeira":[0,0,0,1,3,3,1,3,4,3,1,2,1],"LC|Texto poético e canção em língua estrangeira":[2,3,4,3,2,3,6,5,3,4,7,7,5],"LC|Textos multimodais, publicitários e digitais em língua estrangeira":[3,0,3,3,2,0,1,4,1,1,4,0,3],"LC|Variação linguística e identidade em língua estrangeira":[0,2,1,2,1,1,1,0,0,1,3,1,0],"LC|Variação linguística, norma e preconceito linguístico":[4,4,13,7,9,8,7,6,10,6,8,9,7],"MT|Análise combinatória e contagem":[2,2,3,3,7,4,6,6,2,4,3,2,6],"MT|Aritmética, operações e representação numérica":[1,4,6,7,7,5,4,3,9,3,4,2,4],"MT|Estatística: amostragem, projeção e interpretação de dados":[1,3,1,3,9,14,12,14,7,4,6,4,6],"MT|Estatística: médias e medidas de tendência central":[3,4,4,9,3,1,3,2,10,8,5,4,4],"MT|Função afim (1º grau)":[0,0,3,4,1,0,0,1,2,0,4,4,1],"MT|Função exponencial e logaritmo":[1,0,3,4,1,4,3,2,3,0,4,3,0],"MT|Função quadrática (2º grau)":[2,1,4,3,1,1,0,0,2,2,1,0,2],"MT|Funções trigonométricas e periodicidade":[0,0,2,0,1,1,2,0,1,0,2,1,0],"MT|Funções: conceito geral e modelagem":[0,1,1,1,5,5,5,7,5,7,4,11,8],"MT|Geometria analítica e localização espacial":[3,2,2,3,5,2,3,4,1,2,4,1,2],"MT|Geometria espacial: sólidos, planificação e poliedros":[2,2,5,5,2,0,3,3,3,2,0,2,3],"MT|Geometria espacial: volume e capacidade":[1,4,7,5,3,6,7,8,2,10,10,7,8],"MT|Geometria plana: área, perímetro e figuras":[6,2,9,5,3,11,3,6,5,6,8,7,4],"MT|Grandezas, unidades, escalas e estimativa":[2,2,7,4,9,5,12,7,7,7,3,6,7],"MT|Leitura e interpretação de gráficos":[3,3,7,8,8,3,6,3,4,4,4,4,3],"MT|Porcentagem, juros e matemática financeira":[3,7,6,3,4,4,2,2,5,10,3,10,7],"MT|Probabilidade":[4,2,7,3,4,7,4,4,3,5,5,2,6],"MT|Razão, proporção, regra de três e variação de grandezas":[7,3,7,12,14,11,15,15,11,12,11,15,16],"MT|Semelhança, Pitágoras e trigonometria no triângulo":[2,1,2,2,2,4,0,0,2,0,1,1,1],"MT|Sequências e progressões (PA e PG)":[1,0,0,2,0,1,0,2,1,2,6,3,1],"MT|Álgebra: equações, sistemas, inequações e matrizes":[1,2,4,4,1,1,0,1,5,2,2,1,1]},"mediaTRI":{"CH":604,"CN":640,"LC":579,"MT":694},"meta":{"total":4440,"provas":24,"ntop":161,"comTRI":4397,"anos":[2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025]}};
+const T = DB.topicos, M = DB.meta, ANOS = M.anos, P = DB.periodos;
+const AREAS = ['LC','CH','CN','MT'];
+const NOME = {LC:'Linguagens', CH:'Humanas', CN:'Natureza', MT:'Matemática'};
+const el = id => document.getElementById(id);
+const br = v => (v===null||v===undefined||v==='') ? '—' : String(v).replace('.', ',');
+
+/* ---------- tema claro/escuro ---------- */
+(function(){
+  const raiz = document.documentElement, btn = el('tema');
+  const SOL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '+
+    'stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4'+
+    'M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  const LUA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '+
+    'stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3'+
+    'a7 7 0 0 0 9.8 9.8z"/></svg>';
+  const efetivo = () => {
+    const t = raiz.dataset.theme;
+    if(t === 'dark' || t === 'light') return t;
+    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+  function pinta(){
+    const alvo = efetivo() === 'dark' ? 'light' : 'dark';   // o botão mostra o destino
+    el('temaIcone').innerHTML = alvo === 'dark' ? LUA : SOL;
+    el('temaTexto').textContent = alvo === 'dark' ? 'Escuro' : 'Claro';
+    btn.setAttribute('aria-label', 'Mudar para o tema ' + (alvo === 'dark' ? 'escuro' : 'claro'));
+  }
+  btn.onclick = () => {
+    const alvo = efetivo() === 'dark' ? 'light' : 'dark';
+    raiz.dataset.theme = alvo;
+    try{ localStorage.setItem('loghus-tema', alvo); }catch(e){}
+    pinta();
+  };
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', pinta);
+  pinta();
+})();
+
+/* ---------- cabeçalho ---------- */
+el('cov').innerHTML = [
+  ['Período','2013 – 2025'],
+  ['Aplicações','<b>24</b> (1ª e 2ª)'],
+  ['Questões','<b>'+M.total.toLocaleString('pt-BR')+'</b>'],
+  ['Tópicos','<b>'+M.ntop+'</b>'],
+].map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('') +
+AREAS.map(a=>{
+  const n = T.filter(t=>t.ar===a).reduce((s,t)=>s+t.n,0);
+  return `<div><dt>${a} · ${NOME[a]}</dt><dd><b style="color:var(--a-${a})">${n}</b></dd></div>`;
+}).join('');
+
+/* ---------- tiles ---------- */
+(function(){
+  const porArea = a => T.filter(t=>t.ar===a);
+  const maior = [...T].sort((x,y)=>y.n-x.n)[0];
+  const subiu = [...T].filter(t=>t.n>=8).sort((x,y)=>y.tend-x.tend)[0];
+  const caiu  = [...T].filter(t=>t.n>=8).sort((x,y)=>x.tend-y.tend)[0];
+  const dificil = [...T].filter(t=>t.n>=8&&t.tri!==null).sort((x,y)=>y.tri-x.tri)[0];
+  const t = [
+    ['Tópico mais recorrente', maior.n, `${maior.to} · ${maior.ar}`],
+    ['Maior alta', (subiu.tend>0?'+':'')+br(subiu.tend.toFixed(2)), `${subiu.to} · ${subiu.ar}`],
+    ['Maior queda', br(caiu.tend.toFixed(2)), `${caiu.to} · ${caiu.ar}`],
+    ['Tópico mais difícil', dificil.tri, `${dificil.to} · ${dificil.ar}`],
+  ];
+  el('tiles').innerHTML = t.map(([k,v,s])=>
+    `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="sub">${s}</div></div>`).join('');
+})();
+
+el('leg').innerHTML = AREAS.map(a=>
+  `<span><i class="dot" style="background:var(--a-${a})"></i>${a} — ${NOME[a]}</span>`).join('');
+
+/* média de dificuldade por área — o contraste entre as áreas em uma linha */
+el('mediaArea').innerHTML = 'Média da área: ' + AREAS.slice()
+  .sort((x,y)=>DB.mediaTRI[y]-DB.mediaTRI[x])
+  .map(a=>`<b style="color:var(--a-${a})">${a} ${DB.mediaTRI[a]}</b>`).join(' · ');
+
+/* ---------- filtros ---------- */
+const F = {area:'', disc:'', ord:'n', q:''};
+function preencher(sel, vals, fmt){
+  sel.innerHTML = sel.options[0].outerHTML + vals.map(v=>`<option value="${v}">${fmt?fmt(v):v}</option>`).join('');
+}
+preencher(el('fArea'), AREAS, a=>`${a} — ${NOME[a]}`);
+function atualizaDisc(){
+  const ds = [...new Set(T.filter(t=>!F.area||t.ar===F.area).map(t=>t.di))].sort((a,b)=>a.localeCompare(b,'pt'));
+  const cur = el('fDisc').value;
+  preencher(el('fDisc'), ds);
+  el('fDisc').value = ds.includes(cur) ? cur : '';
+  F.disc = el('fDisc').value;
+}
+atualizaDisc();
+
+function passa(t){
+  if(F.area && t.ar!==F.area) return false;
+  if(F.disc && t.di!==F.disc) return false;
+  if(F.q){
+    const q=F.q.toLowerCase();
+    if(!(t.to+' '+t.di+' '+NOME[t.ar]).toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+let VIEW = [];
+
+/* ---------- sparkline ---------- */
+function spark(t){
+  const s = DB.serie[t.ar+'|'+t.to] || [];
+  const max = Math.max(1, ...s);
+  const w = 6, gap = 1, h = 20;
+  const barras = s.map((v,i)=>{
+    const bh = v===0 ? 1 : Math.max(2, Math.round(v/max*(h-2)));
+    return `<rect x="${i*(w+gap)}" y="${h-bh}" width="${w}" height="${bh}"${v===max&&v>0?' class="hi"':''}></rect>`;
+  }).join('');
+  return `<svg class="sp" width="${s.length*(w+gap)}" height="${h}" role="img"
+    aria-label="questões por ano de ${ANOS[0]} a ${ANOS[ANOS.length-1]}">${barras}</svg>`;
+}
+
+/* ---------- barra de tendência ---------- */
+const TMAX = Math.max(...T.map(t=>Math.abs(t.tend)));
+function tbar(v){
+  const meio = 48, esc = 46/TMAX;
+  const larg = Math.max(1, Math.abs(v)*esc);
+  const x = v>=0 ? meio : meio-larg;
+  const cor = v>=0 ? 'var(--pos)' : 'var(--neg)';
+  const lab = (v>0?'+':'') + v.toFixed(2).replace('.',',');
+  return `<span class="tcell"><span class="tb">
+    <i style="left:${x}px; width:${larg}px; background:${cor}"></i></span>
+    <span class="tval">${lab}</span></span>`;
+}
+
+/* ---------- tabela ---------- */
+const COLS = [['Tópico','to'],['Área','ar'],['Questões','n'],['Por prova','qp'],
+              ['2013 → 2025','sp'],['Tendência','tend'],['TRI','tri'],['Discrim.','a']];
+let ordCol='n', ordDir=-1;
+el('thead').innerHTML = COLS.map(([t,k])=>
+  `<th><button data-k="${k}">${t}<span class="ar"></span></button></th>`).join('');
+el('thead').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.k; if(k==='sp') return;
+  if(ordCol===k) ordDir=-ordDir; else {ordCol=k; ordDir = (k==='to'||k==='ar')?1:-1;}
+  render();
+});
+
+function drawTable(){
+  const rows = VIEW.slice().sort((x,y)=>{
+    let A=x[ordCol], B=y[ordCol];
+    if(A===null) A = ordDir===1 ? Infinity : -Infinity;
+    if(B===null) B = ordDir===1 ? Infinity : -Infinity;
+    if(typeof A==='string') return A.localeCompare(B,'pt')*ordDir;
+    return (A-B)*ordDir;
+  });
+  el('tbody').innerHTML = rows.map(t=>`
+    <tr data-k="${T.indexOf(t)}">
+      <td><span class="topo">${t.to}</span><div class="disc">${t.di}</div></td>
+      <td><span class="tag" style="color:var(--a-${t.ar})">
+        <i class="dot" style="background:var(--a-${t.ar})"></i>${t.ar}</span></td>
+      <td class="n"><b>${t.n}</b></td>
+      <td class="n">${br(t.qp.toFixed(2))}</td>
+      <td>${spark(t)}</td>
+      <td>${tbar(t.tend)}</td>
+      <td class="n">${t.tri===null?'—':t.tri}</td>
+      <td class="n">${t.a===null?'—':br(t.a.toFixed(2))}</td>
+    </tr>`).join('');
+  el('thead').querySelectorAll('button').forEach(b=>{
+    b.querySelector('.ar').textContent = b.dataset.k===ordCol ? (ordDir===1?' ↑':' ↓') : '';
+  });
+}
+
+/* ---------- listas de alta/queda e dificuldade ---------- */
+function listaHTML(itens, valor, sufixo){
+  const max = Math.max(...itens.map(i=>Math.abs(valor(i))));
+  return itens.map(i=>{
+    const v = valor(i), larg = Math.abs(v)/max*100;
+    const cor = sufixo==='tend' ? (v>=0?'var(--pos)':'var(--neg)') : `var(--a-${i.ar})`;
+    const txt = sufixo==='tend' ? ((v>0?'+':'')+v.toFixed(2).replace('.',',')) : v;
+    return `<div style="display:flex;align-items:center;gap:9px;margin-bottom:5px">
+      <span class="tag" style="color:var(--a-${i.ar}); width:26px">${i.ar}</span>
+      <span style="flex:0 0 46%; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap"
+        title="${i.to}">${i.to}</span>
+      <span style="flex:1 1 auto; height:11px; background:var(--surface-2); border-radius:3px; overflow:hidden">
+        <span style="display:block; height:11px; width:${larg}%; background:${cor}; border-radius:3px"></span></span>
+      <span class="n" style="width:52px; font-size:11.5px">${txt}</span></div>`;
+  }).join('');
+}
+function drawPaineis(){
+  const elig = VIEW.filter(t=>t.n>=8);
+  const altas = [...elig].sort((a,b)=>b.tend-a.tend).slice(0,10);
+  const quedas = [...elig].sort((a,b)=>a.tend-b.tend).slice(0,10);
+  el('altaqueda').innerHTML =
+    (altas.length?`<div class="note" style="margin:0 0 8px"><b>Maiores altas</b></div>`+listaHTML(altas,i=>i.tend,'tend'):'') +
+    (quedas.length?`<div class="note" style="margin:14px 0 8px"><b>Maiores quedas</b></div>`+listaHTML(quedas,i=>i.tend,'tend'):'') ||
+    '<p class="note">Nenhum tópico com 8 ou mais questões nesta seleção.</p>';
+  const ct = elig.filter(t=>t.tri!==null);
+  const dif = [...ct].sort((a,b)=>b.tri-a.tri).slice(0,10);
+  const fac = [...ct].sort((a,b)=>a.tri-b.tri).slice(0,10);
+  el('dificuldade').innerHTML =
+    (dif.length?`<div class="note" style="margin:0 0 8px"><b>Mais difíceis</b></div>`+listaHTML(dif,i=>i.tri,'tri'):'') +
+    (fac.length?`<div class="note" style="margin:14px 0 8px"><b>Mais fáceis</b></div>`+listaHTML(fac,i=>i.tri,'tri'):'') ||
+    '<p class="note">Sem dados de TRI nesta seleção.</p>';
+}
+
+/* ---------- eixos ---------- */
+(function(){
+  const E = DB.eixos;
+  const max = Math.max(...E.flatMap(r=>AREAS.map(a=>r[a])));
+  let h = '<thead><tr><th class="rh">Eixo transversal</th>' +
+    AREAS.map(a=>`<th style="color:var(--a-${a})">${a}</th>`).join('') + '<th>Total</th></tr></thead><tbody>';
+  E.forEach(r=>{
+    const tot = AREAS.reduce((s,a)=>s+r[a],0);
+    h += `<tr><th class="rh">${r.eixo}</th>` + AREAS.map(a=>{
+      const v=r[a], op = v===0?0:(0.12+0.72*v/max);
+      const forte = op>0.5;
+      return `<td style="background:color-mix(in srgb, var(--a-${a}) ${Math.round(op*100)}%, transparent);
+        color:${forte?'#fff':'var(--ink)'}">${v}</td>`;
+    }).join('') + `<td class="n" style="color:var(--ink-2)">${tot}</td></tr>`;
+  });
+  el('tex').innerHTML = h + '</tbody>';
+})();
+
+/* ---------- tooltip ---------- */
+const tip = el('tip');
+document.addEventListener('mouseover', e=>{
+  const tr = e.target.closest('tbody tr');
+  if(!tr || tr.dataset.k===undefined){ tip.style.opacity=0; return; }
+  const t = T[+tr.dataset.k];
+  const s = DB.serie[t.ar+'|'+t.to] || [];
+  tip.innerHTML = `<div class="t">${t.to}</div>
+    <dl><dt>Área</dt><dd>${t.ar} · ${t.di}</dd>
+    <dt>Questões</dt><dd>${t.n} (${br(t.qp.toFixed(2))}/prova)</dd>
+    <dt>${P.p1}</dt><dd>${br(t.ate.toFixed(2))}/prova</dd>
+    <dt>${P.p2}</dt><dd>${br(t.dep.toFixed(2))}/prova</dd>
+    <dt>TRI média</dt><dd>${t.tri===null?'—':t.tri}</dd>
+    <dt>Por ano</dt><dd style="font-size:10.5px">${s.join(' ')}</dd></dl>`;
+  tip.style.opacity=1;
+  const pad=14, w=300;
+  let x=e.clientX+pad, y=e.clientY+pad;
+  if(x+w>innerWidth) x=e.clientX-w-pad;
+  if(y+tip.offsetHeight>innerHeight) y=e.clientY-tip.offsetHeight-pad;
+  tip.style.left=Math.max(6,x)+'px'; tip.style.top=Math.max(6,y)+'px';
+});
+document.addEventListener('mouseleave', ()=>{ tip.style.opacity=0; });
+
+/* ---------- render ---------- */
+function render(){
+  VIEW = T.filter(passa);
+  const q = VIEW.reduce((s,t)=>s+t.n,0);
+  el('count').textContent = `${VIEW.length} tópicos · ${q.toLocaleString('pt-BR')} questões`;
+  drawTable(); drawPaineis();
+}
+el('fArea').onchange = e=>{ F.area=e.target.value; atualizaDisc(); render(); };
+el('fDisc').onchange = e=>{ F.disc=e.target.value; render(); };
+el('fOrd').onchange  = e=>{ ordCol=e.target.value; ordDir=-1; render(); };
+el('fBusca').oninput = e=>{ F.q=e.target.value.trim(); render(); };
+el('btnReset').onclick = ()=>{
+  F.area=''; F.disc=''; F.q=''; ordCol='n'; ordDir=-1;
+  el('fArea').value=''; el('fBusca').value=''; el('fOrd').value='n';
+  atualizaDisc(); render();
+};
+render();
+</script>
+
+</body>
+</html>

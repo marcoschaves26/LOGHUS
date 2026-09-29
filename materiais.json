@@ -1,0 +1,1318 @@
+[
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
+  "titulo": "Assuntos que mais caem",
+  "detalhe": "Linguagens e Humanas",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/1UtGBNRvxZCkztl_z7rpar0MXJ_W24NFl/view",
+  "descricao": "O que mais caiu nas provas regulares de 2021 a 2025."
+ },
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
+  "titulo": "Assuntos que mais caem",
+  "detalhe": "Matemática e Natureza",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/1t3DKhSfCpMEK8lPpZS-Y49hBBz22e2Bt/view",
+  "descricao": "O que mais caiu nas provas regulares de 2021 a 2025."
+ },
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
+  "titulo": "Mapa ENEM",
+  "detalhe": "Assuntos, competências e habilidades",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/1QN96Xq62h0OhGDOmZbUR-QDZCG3_mjXh/view",
+  "descricao": "Frequência histórica e dificuldade TRI de cada habilidade, 2014–2023."
+ },
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
+  "titulo": "Mapa de Recorrência ENEM",
+  "detalhe": "",
+  "tipo": "guia",
+  "link": "mapa-recorrencia.html",
+  "descricao": "Página interativa: os tópicos que mais se repetem no ENEM (2013–2025), o que subiu ou caiu e a dificuldade média na TRI."
+ },
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
+  "titulo": "Provas ENEM PPL 2016-2025 (2ª aplicação)",
+  "detalhe": "",
+  "tipo": "provas",
+  "link": "https://drive.google.com/file/d/1DpgM1LmQVdzFHWXJCk24zDwtlhLvoTWf/view",
+  "descricao": "Os dez cadernos da 2ª aplicação, com competência, habilidade, dificuldade e conteúdo de cada questão."
+ },
+ {
+  "area": "ling",
+  "disciplina": "Linguagens (geral)",
+  "titulo": "Linguagens ENEM 2015-2025",
+  "detalhe": "E-book por habilidade e dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1Xz2b90nnn4wlDp6_AKKQdOrC5-4eblk7/view",
+  "descricao": "550 questões oficiais nas 30 habilidades, da mais fácil à mais difícil."
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Escolas literárias",
+  "detalhe": "Resumo (Profa. Bianca Moura)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1j4SWIiL3XDcNiqW6UTOwaapxwAGsLt0z/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Literatura",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1BG-p0RxvQixmsg6BQHY_DJs_eRwrLycS/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Literatura ENEM e Fuvest",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1-Hvw2G0OH8NULK8R1AeQndOlprJwGUzJ/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Modernismo",
+  "detalhe": "Lista 1",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1jtnOQWuYeLFn51z-zqHOdSdrXT7AbSx6/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Modernismo",
+  "detalhe": "Lista 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1q-co3Zdvxa6EcG7etQxZNzgZCSfitE20/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Poemas e textos literários",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1wUthm_PAPRsin5l_KMsan66WtMoiUPB5/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 6 (H18)",
+  "detalhe": "E-book",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1rqXll5bXcm6ABHA79jFm-BSVrUQ_lH_Y/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 6 (H18)",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1mi-co6Dx-5rDiJFiWsW5joWaawK_el9j/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 8 (H25 a H27) Variação linguística",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1IcsvwesdA_XggpAJ4oKiydXAKDXnk1fn/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Figuras de linguagem",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/175Dma4XZkWbJPQFpVzMxOql0amKUhn7Q/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Gramática",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1g2YRebDoTo9aHzF51wsTILUWIw9miAHE/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Textos publicitários",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/19ra5eoxtjf5YffxWq7a617grZoVTSV6x/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
+  "titulo": "Dicas para a prova de Humanas",
+  "detalhe": "Slides (Celmo Almeida)",
+  "tipo": "slides",
+  "link": "https://drive.google.com/file/d/19TO77YgaPvg8qlM_-Hj2hIydIYt2E3Sc/view",
+  "formato": "Slides"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
+  "titulo": "Filosofia e Sociologia no ENEM",
+  "detalhe": "Principais pensadores",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1_z0NwCi0fCKmePW14qRinnxrfX7WFqRb/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Aristóteles",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1NhtSSpuW2kW0pz8TTpknaBXExwS5Pfho/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Aristóteles",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1aXeXJa481l9EPngXlCLRb8Nwc0zIAcvj/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Descartes",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1lpFxx0rNiHAb2YZ_3LmwAPSd-sTkpdzw/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Filosofia Contemporânea",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1orhPIfQkZhUMUFYICErZlwZcg4pVMZE3/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Filosofia USP e Unicamp",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1RDccnXsu7xYD-97gUDjpzR17vmPji255/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Filosofia no ENEM",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1TCfpE4_PietDA42t87C1FecZNErMEV7O/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Filosofia no ENEM",
+  "detalhe": "Temas e autores mais cobrados",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/12h7Xwm1PAYBVGTqp9oKhnsQwL67MNmwf/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Filósofos",
+  "detalhe": "Tabela resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1CuRl5ILzRo1XumynbXRrsxX8dw3twi2e/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Foucault",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1H0bLLlj_YuYk2tOfhMj6LXMy_D18X7LG/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Hobbes",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/14DSgA-C17E8DLwQAPdjN-lLuCSULGDwa/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Iluministas",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1KeJ4CJ4qIDNMY3IZf2T_MaBjfGlGawZL/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Kant",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1LYJbZqtY6dXD85OJa5B92yHEkMxYsU2x/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Platão",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1mWeZPs7Rwd28DDoxdg7muDyE0MJbc6aY/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Platão",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1j20PeeYIUO5gJsIflVgqfITyft3EQ_Ic/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Pré-socráticos",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1Pqqunh0KZlrQ3ek3FK6F65do4cz0tV0Z/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Filosofia",
+  "titulo": "Sócrates",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1G1VvwWkbV3aY9BZK_IjKobetSWxIJ74Q/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Agricultura",
+  "detalhe": "Questão ENEM comentada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1URNEaCO5K1yrqfqTkBgO_5SVdYvx31ro/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Agricultura brasileira",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1ucgdV2k-mIjrlTm3gIe0-ZWjuWkaNSvY/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Cartografia",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1JZVDzITTar86VgW_-JXSlyr682o7E9qx/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Estrutura geológica e agentes externos",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1UzB12N8DW8Xyl3vevz53Pp9GcKQoc7AM/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Geografia Econômica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1lliq_fF-NgdGCZnTtQemyGgE7XNjeB0I/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Geografia Física",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1CsZG7343tuCeT23u92rbbySex65RQlAc/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Geografia Física",
+  "detalhe": "Questões por habilidade e dificuldade (Prof. Marcos Chaves)",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1FCsUWoaWCl0a8qGis28uif5U7MeOQhjj/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Geografia Física",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1BU-8-qhO7qNy7cd2r5zxJOeZZuPajObs/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Geologia geral",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1tQnvj_GAhuUvK7TMqrdJ9beaU51fkBBe/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Indústria",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1LSKZV3qUHml9XInHV-BlZw6DqfeCDttn/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Questões ambientais",
+  "detalhe": "Lista 1",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1xL0AbhhBWEQ_kns7fcOX8qv4I_ABJiqb/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Questões ambientais",
+  "detalhe": "Lista 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1sIrFFrlnqfqxs_c-Z_8lKR0yD6EVnd-x/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Solos",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/14BHZsFjkk8gNLvs1nviO0s9X3s9dhUqo/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Terremotos",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/17cYnMPb5frLF_zzHBN7Y-XQd_nAr5GH8/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Geografia",
+  "titulo": "Urbanização",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/15H8i_JiR3srgPkpRxLNGpIPqmxVoYOv5/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "América colonial e independências",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1DS9O5L7iRuWuvdM3sD6TaX7e3MskMRxx/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Baixa Idade Média",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1cxR7rK728rGn4-dyygsEsCEbq3HN90_d/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Brasil Colônia",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1HoyLiqQQOb0Mlzg_01sLc9oRatlUfi3P/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Era Vargas",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/10kqjtmXNtDfawuK3klYcvYgPJg64iVFu/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Grécia e Roma",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1xPSoLogbkuGElS_H_HuYH11p1keemP6R/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "História Geral",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/121q7YPtrqBSIOFDyNBZ53vPqeJ4q4Vx8/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "História da África",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/102W5qYmaXmUrfmixGjVqmETY0MgOvljl/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "História do Brasil",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1HGoR0vYwvxNueM09O1wIDOjjwEK5HSD_/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Idade Moderna",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1JMUTdlx6qI8v6vPJXHr_QCSdO1VeWPlX/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Idade Média",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/17LvYznvkQWJtwnKzNACTqk3vkUARWsQC/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Mapas mentais de História",
+  "detalhe": "",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1jAswjvc_8HFzdJ-CUPDGAidUwHQfuSIS/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Oriente Médio",
+  "detalhe": "Mapa mental (parte 1)",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1vdPUY0g_lJEafhcNm5w86lxERzm3h2Rd/view",
+  "formato": "Imagem"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Oriente Médio",
+  "detalhe": "Mapa mental (parte 2)",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1r7fSR8O7oXp9e4qDe5JbPlyHkU37BnIL/view",
+  "formato": "Imagem"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Período Joanino",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/13zPUcOWPM1uMNBTc-r-ohur_UsjWBk8N/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Primeira Guerra Mundial",
+  "detalhe": "Roteiro de estudo (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1YBnaJSGIVNuAPiftYUjgz-VKHSkH7VYx/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Reforma Religiosa",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/19NKoz5UlTAy7vim1hYQtKoekDYppY791/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "República Oligárquica",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1Izqu3UeUQwfJHLmW75C_prEwu0GhNv4v/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Revolução Industrial",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1H_-GvJmhdiRd6DVxx4171SlJHKMr-sX4/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "África no ENEM",
+  "detalhe": "Caderno de revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1kmwb1_DL1h1OQEA7w7L62hh5M_TtQKz-/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
+  "titulo": "Revisão Humanas H1, H20 e H25 (Celmo Almeida e Marcos Chaves)",
+  "detalhe": "",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1vp3MxMNntYTM-7tLQp2Z4oH2l7BsEpWi/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Sociologia",
+  "titulo": "Max Weber",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/13_NuIjAYWJK8CntLWGwpDgX8AWz8LY7t/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Sociologia",
+  "titulo": "Weber, Marx e Durkheim",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1zfBR4fC9tgfomAHqv7K4pnSsCxyn9aT3/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Bioquímica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1cvwdoe_UM-Ku9WXxULB-x-j0pxtBOmzi/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Citologia",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/10Td4k2G_519U3RZA85NT9vWSM7K-7KEa/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Ecologia",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1pXdFWYrMRuZW-9hprC1AjSkE6Lcm4mCR/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Ecologia",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/13usRvgYoWxdpMP8jgLjZP5dLuSCCI-6Z/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Fisiologia vegetal",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Msc5aoCwNTdnx2XOkjwcRwZlDzu7VZ1L/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Sais minerais",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1DDpeoQAKdvbjuc5yHCnNhV5vWq1iq9HB/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Calorimetria",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/15fNqRK5rbtcQDmWEOOJohc25CxsJVMML/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Cinemática",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1235dol8dQJvbBlBkuf1Ux_aqh2yNBciP/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Cinemática",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Itzuh6aWANtsag0O8Fa82ewqZwaNnLDk/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Circuitos elétricos",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/18LWMltkIhv3WQRAGYH8EjsrPG72Dz6TP/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1wpkSaO7G93KoAMeZ1yQrWAQFGcXZF5N_/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1sHjWrAicE5g27tQy4uOHeNOXcz5MKWKZ/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1LPwCEEg3uVZXpWr07fyPGWz4kkn8cXb-/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrodinâmica",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1I3LZRSPXcH_dgZRJH1weAAPecGA-AI24/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrodinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1-G-BO8ZlI8ExFOlR81PxXer0-gs6YOPV/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrostática",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/11j9N74NqwKxKgWuJrnxmhjB7A1sceWGe/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Lançamento oblíquo e gráficos",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1FKJbSo0TwxDL69Z8gfdHHkJ2bozgOQTb/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Ondulatória",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/18gSL4VV3vy2wHIrfaESC4bQHjlB8VmBL/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Termodinâmica",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Ufj3Yfs_g4i43-ZnKtcelJ5eOGTPw8VG/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Termodinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1wfVLhuMGe_6ncI0VyNmgxQz2iAgjUilq/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Óptica",
+  "detalhe": "Lista ENEM",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Pge6-2mrFYUmQLCAW9tctwgrpHLrCcCs/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Óptica",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1B3boePsLChuLY_N5u5gnSLvmK19EwLH5/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Atomística",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1bL8B7VSWmGOQx32Ky4BCDggbeRiXwi3q/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Eletroquímica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/14BJ2BL7T5RKt7LRJYfpy_UjfO9pteWxa/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Eletroquímica e equilíbrio químico",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/117pse0GMIKQb8Cx24MevYIMRltz09rrk/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Equilíbrio e cinética química",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1EGMQmCBPuWQ6MalnDXr6WyWfvOvOoMD2/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1sGd8NSH5MNjuJeh1_Nr-9C_0gHF0d1DM/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1HU9LQSp6_x6xjYW5XqLp-38D9zK5-xkA/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1dDX6UwHuIqJAku16-0nMJw52MzBFB6e2/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1zcTaA3c3LDO5HuD3BZymKSlgF9FAHDLM/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Gases",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1-uTjYhGzTlUVbkTC1FNPeZFPXyfmcNw-/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "NOX e química inorgânica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1s1ac8qtwWN8EfiHenm0v-uBCMmJ5IYdz/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Radioatividade",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1wnhdudsdmfsTXwToiXoGhHIM0TUhcPZr/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Radioatividade",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1vabalPTW8YgqD6GX2Yyd5QPl8g-e9Bek/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Reações orgânicas",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1UcXJGCXglZN7yg3L4hcZICz20hhGUJRv/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Reações orgânicas",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/137vI11raUBeVmsnDOoZwkTi6NNrrPjRl/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Separação de misturas e óxidos",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/17MSi4q97i3aMrqUUhmp0WQHEyJiTpCzk/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Matemática (geral)",
+  "titulo": "Aula da Semana 13",
+  "detalhe": "Slides",
+  "tipo": "slides",
+  "link": "https://drive.google.com/file/d/1rGegwCfoIeA8OJ7GIR3fxCrESU-lL3zN/view",
+  "formato": "Slides"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Função afim",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/13-kNPOCkLb9jNOSnSWkowtVecPkVggkn/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Função quadrática",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/14eX7X9Mbxx3RIzF-rRTW4OyyBoALlDCp/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Função trigonométrica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1ORTlrOd937Yog-OsFEHjaLIHf_ZPxLXr/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Funções",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1H5107OpfltVn66IKzFm_T6LjSzUmA4-p/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Funções",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/160q6i-8VdNyKQV86QaJO2AgNJW-wk3Ot/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Funções",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1yu3VizJHnuUx_a7XO51M7JW_gYgYc_rU/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Funções",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1nYi_XPnukGxRdQ-amufohqbKsi0rgLN5/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "Logaritmo",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1XRj-W4axTz2QzRSjE3vjUxa8Y58IFwbt/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Funções e Álgebra",
+  "titulo": "PA e PG",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1ENdVVpCtEA-WhU8I5_sL80SQb9R0J_8z/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria analítica",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1nb-dCv6DOB1JgssVa0qfHxFurPaIY_d3/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria analítica e gráficos",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1qFIDKwJJYjmnVBoKMtRbpRIy7p-wGOlC/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria espacial",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/167D1aNxeXAu3v8qbFH0_yrvdNf8E78YW/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria espacial",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1jh-FuMi9D9lXc9WMCopKKHvYrFMMpUPJ/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria plana",
+  "detalhe": "E-book por dificuldade (com gabarito comentado)",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1_s6n8KKjUfpZshO07ZNSUtcs29GYOSgu/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria plana",
+  "detalhe": "Lista (bloco 3)",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1lsKxy3bYYreg07eaRg3JEBj_PPB9GL_F/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria plana",
+  "detalhe": "Lista ENEM e PPL",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1p32CNThvwj3XKZQzdKqetFowiuwuVial/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Geometria plana",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1cd7q1-nDHacjK1xP4_H9FGfpc7_m9WAL/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Geometria",
+  "titulo": "Triângulos",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1V-vi9zyxDBngkDn8bSDOBZN6ROiojS-4/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Matemática (geral)",
+  "titulo": "Gráficos e tabelas",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1AJP0ZfX_FYIqYcciFAUSGoQwMX2_AULE/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Matemática (geral)",
+  "titulo": "Matemática ENEM 2015-2025",
+  "detalhe": "E-book por habilidade e dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1EdWOHL22NiTRDIy6KRZsV3qu0UJtRAXQ/view",
+  "descricao": "495 questões oficiais nas 30 habilidades, da mais fácil à mais difícil."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Matemática Financeira",
+  "titulo": "Matemática financeira",
+  "detalhe": "Lista 1",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1ZGvaa1J-DffZiW1LCq89MtdoW96Hr1CX/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Matemática Financeira",
+  "titulo": "Matemática financeira",
+  "detalhe": "Lista 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1H8nCrhaFXr1Gl4lHVFXYZwbVDAvVuQgf/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Combinatória e probabilidade",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1HBOVrg2v9_fXen7kVwOn8TWVJabEDFNk/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Estatística",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/18yD9XaTKXTwSPbHUuKvYGdMkyXLJeOX7/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1JPQTOnpj6hDzTK-vwpenkPZK3Bb-2OPT/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade",
+  "detalhe": "Lista super avançada (ITA)",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1eqgDwVRQOmOsOsokTObpj-oTAAYqFg1F/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1GSQ_YE3kFIXpBzCw4t3uSvY9Du-855Pc/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade",
+  "detalhe": "Questões ENEM",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1UJXgxBZbwSDOtSsScnRN92D6I1Iydv67/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade e combinatória",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/129RnQmVdruFmc7WT5CmKJdNZNcgVsMTX/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Grandezas proporcionais",
+  "detalhe": "Lista 1",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/12M_MkWFzNwJ9zlfMJJAaCDUR2K-xHo_F/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Grandezas proporcionais",
+  "detalhe": "Lista 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1BXTp1mXVZKbM_cNnKuov95Tkph3jFLJx/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Porcentagem",
+  "detalhe": "E-book por habilidade e dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1UogswsHXkJVvpc07v9AmfJmafvks01FP/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Porcentagem",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/185N-noPng-S3gZGNgOtYDpu1ahn1w1mA/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Proporção",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/18WiPOXruEFl0z-VuvrfxrY-um5yzfl40/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Proporção",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1vp7tmLQGPGE7bHZJro0dAcLWIVOg4yEh/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Proporção e Porcentagem",
+  "titulo": "Razão e proporção",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/13sFVhpXfgeZYWGlkjqP5pWJbUL2tmDVq/view"
+ },
+ {
+  "area": "red",
+  "disciplina": "Redação",
+  "titulo": "Redação nota 1000",
+  "detalhe": "E-book de estudo",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1biR4L92WdZOuOZL6AdBJGdNC5B2oVEKl/view",
+  "descricao": "Padrões das redações nota 1000 e guia prático de preparação."
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Biologia",
+  "titulo": "Biologia",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/131VeKoyjqfNB0UgQvlTf4F4yAqUy0eT6/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Biologia",
+  "titulo": "Biologia",
+  "detalhe": "Prova discursiva (aula do Prof. Daniel)",
+  "tipo": "slides",
+  "link": "https://drive.google.com/file/d/14uccQK7_nqPFU4Lywehxz3VbizzBuYJC/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Combinatória e probabilidade",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1vQ-UvlpRKPQPfVOwHK_HDG-V5c40lNdM/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Funções",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1lGC-vqys1E_6TyBjTIt8q1CGhx9al60f/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Física",
+  "titulo": "Física",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Za2oFeR-PJsdUU_bC3q7YITqWnHViApD/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Geografia",
+  "titulo": "Geografia",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1uFJf09WZglsTmjh2GyCnlw7QvQ2lRx7u/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Geometria plana",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1ZrSSv_PMr4Cpjq1oRDVbgs_Ou8dqI8u6/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Grandezas proporcionais",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1VJ2986EoloPzJeg-BXbYuaYm8cG39Fsx/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "História",
+  "titulo": "História",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1AHvje_W3RuB8CELtpcI7sZeM-eKA4vIZ/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "História",
+  "titulo": "História",
+  "detalhe": "Lista UERJ 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1FwtA7OCx2yCOtpQQu1gqIek9uMWjgUaN/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Matemática",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/192nTIXJEBfQnt69a3wrqzek-xty9K-8Z/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Português",
+  "titulo": "Português",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/18fAIm-38DmgtLpCxlFq0j2XNhzMx-WQ-/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Química",
+  "titulo": "Química",
+  "detalhe": "Lista 1º EQ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1_tMcIEy1lURuXFJ1FbFheoAYlDG1Q3MF/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Simulados",
+  "titulo": "Simulado Aluísio de Azevedo UERJ 2027",
+  "detalhe": "",
+  "tipo": "provas",
+  "link": "https://drive.google.com/file/d/1nW0HM8Mp3V7slpcCoNxkql9TvSHEDZ3L/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Simulados",
+  "titulo": "Simulado inédito UERJ 2027 (Exame de Qualificação)",
+  "detalhe": "",
+  "tipo": "provas",
+  "link": "https://drive.google.com/file/d/12k3KqngViidYLnZcXpvUSPsM5lSyptym/view"
+ }
+]

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Biblioteca Loghus</title>
+<meta name="description" content="E-books, listas, resumos e mapas mentais do Curso Loghus, organizados por área e disciplina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+body{margin:0} img{max-width:100%} [hidden]{display:none!important}
+
+/* Layout: fichário de estudo — cabeçalho, abas por tipo com marca-texto, lista agrupada pelas áreas do ENEM (LC, CH, CN, MT) */
+:root{
+  --papel:#f2f4f6; --superficie:#ffffff; --tinta:#15202c; --tinta-2:#56626f; --linha:#d8dde3;
+  --marcador:#f7d23e; --marcador-tinta:#15202c; --botao:#15202c; --botao-tinta:#ffffff;
+  --lc:#c2410c; --ch:#9a6700; --cn:#15803d; --mt:#1d4ed8; --rd:#a3195b; --ge:#5b6672; --uj:#0f766e;
+  --erro:#b42318; --ok:#15803d;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-texto:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --raio:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --papel:#10151b; --superficie:#171e26; --tinta:#e6ebf0; --tinta-2:#9aa6b2; --linha:#2a3440;
+  --marcador:#d9b21f; --marcador-tinta:#10151b; --botao:#e6ebf0; --botao-tinta:#10151b;
+  --lc:#f08a5d; --ch:#e0b34a; --cn:#5cc27f; --mt:#7ea2ff; --rd:#ee6fa6; --ge:#9aa6b2; --uj:#4fc4b4;
+  --erro:#ff8a7a; --ok:#5cc27f; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --papel:#10151b; --superficie:#171e26; --tinta:#e6ebf0; --tinta-2:#9aa6b2; --linha:#2a3440;
+  --marcador:#d9b21f; --marcador-tinta:#10151b; --botao:#e6ebf0; --botao-tinta:#10151b;
+  --lc:#f08a5d; --ch:#e0b34a; --cn:#5cc27f; --mt:#7ea2ff; --rd:#ee6fa6; --ge:#9aa6b2; --uj:#4fc4b4;
+  --erro:#ff8a7a; --ok:#5cc27f; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--papel); color:var(--tinta); font-family:var(--f-texto); font-size:15px; line-height:1.5}
+#app{max-width:980px; margin:0 auto; padding-inline:20px; padding-block:28px 64px}
+@media (max-width:480px){ #app{padding-inline:16px; padding-block:20px 48px} }
+button,input,select,textarea{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--mt); outline-offset:2px}
+a{color:inherit}
+
+.topo{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px}
+.olho{font-family:var(--f-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--tinta-2); margin:0 0 6px}
+h1{font-family:var(--f-display); font-weight:700; font-size:clamp(34px, 6vw, 52px); line-height:1; letter-spacing:-.02em; margin:0; text-wrap:balance}
+h1 .grifo{background:linear-gradient(transparent 58%, var(--marcador) 58%, var(--marcador) 92%, transparent 92%); padding-inline:2px}
+.sub{margin:10px 0 0; color:var(--tinta-2); max-width:60ch}
+
+.chave{display:inline-flex; align-items:center; gap:10px; border:1px solid var(--linha); background:var(--superficie); border-radius:999px; padding:6px 14px 6px 8px; cursor:pointer; font-weight:600; font-size:14px}
+.chave .trilho{width:34px; height:20px; border-radius:999px; background:var(--linha); position:relative; transition:background .15s}
+.chave .trilho::after{content:""; position:absolute; top:3px; left:3px; width:14px; height:14px; border-radius:50%; background:var(--superficie); transition:transform .15s}
+.chave[aria-pressed="true"] .trilho{background:var(--tinta)}
+.chave[aria-pressed="true"] .trilho::after{transform:translateX(14px)}
+
+.filtros{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.busca{flex:1 1 260px; min-width:0; position:relative}
+.busca input{width:100%; height:44px; border:1px solid var(--linha); border-radius:var(--raio); background:var(--superficie); padding:0 14px 0 40px}
+.busca svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--tinta-2)}
+.filtros select{flex:1 1 200px; max-width:100%; height:44px; border:1px solid var(--linha); border-radius:var(--raio); background:var(--superficie); padding:0 12px}
+
+.abas{display:flex; gap:4px; margin-top:22px; border-bottom:1px solid var(--linha); overflow-x:auto; scrollbar-width:none}
+.abas::-webkit-scrollbar{display:none}
+.aba{flex:0 0 auto; border:0; background:none; padding:10px 12px 12px; cursor:pointer; font-weight:600; color:var(--tinta-2); position:relative}
+.aba .n{font-family:var(--f-mono); font-size:12px; margin-left:6px; color:var(--tinta-2)}
+.aba[aria-selected="true"]{color:var(--tinta)}
+.aba[aria-selected="true"]::after{content:""; position:absolute; left:8px; right:8px; bottom:-1px; height:4px; background:var(--marcador); border-radius:2px 2px 0 0}
+
+.barra-edicao{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; padding:12px 14px; border:1px dashed var(--tinta-2); border-radius:var(--raio)}
+.barra-edicao p{margin:0; color:var(--tinta-2); font-size:14px; min-width:0}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:40px; padding:0 16px; border-radius:8px; border:1px solid var(--botao); background:var(--botao); color:var(--botao-tinta); font-weight:600; cursor:pointer; text-decoration:none; white-space:nowrap}
+.btn.sec{background:transparent; color:var(--tinta); border-color:var(--linha)}
+.btn.perigo{background:var(--erro); border-color:var(--erro); color:#fff}
+.btn:disabled{opacity:.55; cursor:progress}
+
+.status{margin-top:14px; font-size:14px; padding:10px 14px; border-radius:8px; background:var(--superficie); border:1px solid var(--linha)}
+.status.erro{border-color:var(--erro); color:var(--erro)}
+
+.grupo{margin-top:30px}
+.grupo h2{display:flex; align-items:center; gap:10px; font-family:var(--f-display); font-weight:500; font-size:20px; margin:0 0 10px; text-wrap:balance}
+.grupo h2 .qtd{font-family:var(--f-mono); font-size:12px; color:var(--tinta-2); font-weight:500}
+.sigla{display:inline-grid; place-items:center; min-width:34px; height:24px; padding:0 6px; border-radius:5px; font-family:var(--f-mono); font-size:12px; letter-spacing:.04em; color:var(--cor); border:1.5px solid var(--cor)}
+
+.lista{list-style:none; margin:0; padding:0; background:var(--superficie); border:1px solid var(--linha); border-radius:var(--raio); overflow:hidden}
+.item{display:grid; grid-template-columns:4px minmax(0,1fr) auto; gap:0 16px; align-items:center; padding:14px 16px 14px 0; border-top:1px solid var(--linha)}
+.item:first-child{border-top:0}
+.item .faixa{align-self:stretch; background:var(--cor); margin-block:-14px}
+.item .corpo{min-width:0}
+.item .tit{font-weight:600; font-size:16px; margin:0; overflow-wrap:anywhere}
+.item .desc{margin:2px 0 0; color:var(--tinta-2); font-size:14px; overflow-wrap:anywhere}
+.meta{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; font-size:13px; color:var(--tinta-2)}
+.meta .tipo{font-weight:600; color:var(--tinta)}
+.meta time{font-family:var(--f-mono); font-size:12px}
+.acoes{display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end}
+.abrir{display:inline-flex; align-items:center; gap:6px; height:36px; padding:0 14px; border-radius:8px; border:1px solid var(--linha); font-weight:600; text-decoration:none; white-space:nowrap}
+.abrir:hover{border-color:var(--tinta)}
+.mini{height:36px; padding:0 12px; border-radius:8px; border:1px solid var(--linha); background:none; cursor:pointer; font-size:14px}
+.mini.excluir{color:var(--erro)}
+@media (max-width:560px){
+  .item{grid-template-columns:4px minmax(0,1fr); row-gap:10px}
+  .acoes{grid-column:2; justify-content:flex-start}
+}
+.confirma{grid-column:2 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:10px; padding:10px 12px; border-radius:8px; border:1px solid var(--erro)}
+.confirma p{margin:0; flex:1 1 200px; font-size:14px}
+
+.vazio{margin-top:28px; padding:36px 24px; text-align:center; border:1px dashed var(--linha); border-radius:var(--raio); color:var(--tinta-2)}
+.vazio strong{display:block; color:var(--tinta); font-family:var(--f-display); font-weight:500; font-size:20px; margin-bottom:6px}
+
+.painel{margin-top:20px; background:var(--superficie); border:1px solid var(--tinta); border-radius:var(--raio); padding:20px}
+.painel h2{font-family:var(--f-display); font-weight:500; font-size:22px; margin:0 0 16px}
+.campos{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px 16px}
+.campo{display:flex; flex-direction:column; gap:6px; min-width:0}
+.campo.largo{grid-column:1 / -1}
+.campo label, .campo .rot{font-size:13px; font-weight:600}
+.campo input, .campo select, .campo textarea{width:100%; min-height:42px; border:1px solid var(--linha); border-radius:8px; background:var(--papel); padding:9px 12px}
+.campo textarea{min-height:76px; resize:vertical}
+.campo .dica{font-size:12.5px; color:var(--tinta-2)}
+.segmento{display:flex; flex-wrap:wrap; gap:6px}
+.segmento label{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--linha); border-radius:999px; padding:7px 14px; cursor:pointer; font-weight:500; font-size:14px}
+.segmento input{position:absolute; opacity:0; pointer-events:none}
+.segmento label:has(input:checked){background:var(--marcador); color:var(--marcador-tinta); border-color:var(--marcador)}
+.segmento label:has(input:focus-visible){outline:2px solid var(--mt); outline-offset:2px}
+.erro-campo{color:var(--erro); font-size:13px; margin:12px 0 0}
+.botoes{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+@media (max-width:560px){ .campos{grid-template-columns:minmax(0,1fr)} }
+
+.rodape{margin-top:40px; font-size:13px; color:var(--tinta-2)}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+
+.busca.grande{margin-top:24px}
+.busca.grande input{height:52px; font-size:16px; padding-left:44px; border-radius:12px}
+.busca.grande svg{left:15px}
+.areas{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:8px; margin-top:16px}
+@media (max-width:860px){ .areas{grid-template-columns:repeat(4, minmax(0,1fr))} }
+@media (max-width:480px){ .areas{grid-template-columns:repeat(3, minmax(0,1fr)); gap:6px} .area-btn{padding:9px 10px; gap:2px} .area-btn .sigla{display:none} .area-btn .area-nome{font-size:14px} }
+.area-btn{display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:0; padding:12px; border:1px solid var(--linha); border-radius:var(--raio); background:var(--superficie); cursor:pointer; text-align:left; position:relative}
+.area-btn:hover{border-color:var(--cor)}
+.area-btn .area-nome{font-weight:700; font-size:15px; line-height:1.2}
+.area-btn .area-n{font-family:var(--f-mono); font-size:12px; color:var(--tinta-2)}
+.area-btn[aria-pressed="true"]{border-color:var(--cor); box-shadow:inset 0 -4px 0 var(--cor)}
+.filtro{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin-top:18px}
+.rot-filtro{font-family:var(--f-mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--tinta-2); min-width:84px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; min-width:0; flex:1 1 300px}
+.chip{border:1px solid var(--linha); background:var(--superficie); border-radius:999px; padding:6px 12px; cursor:pointer; font-size:14px; font-weight:500}
+.chip .n{font-family:var(--f-mono); font-size:11px; color:var(--tinta-2); margin-left:6px}
+.chip[aria-pressed="true"]{background:var(--marcador); border-color:var(--marcador); color:var(--marcador-tinta)}
+.chip[aria-pressed="true"] .n{color:var(--marcador-tinta)}
+.pill{display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.02em; padding:1px 8px; border-radius:999px; border:1px solid var(--linha); color:var(--tinta)}
+.pill-ebook{background:var(--marcador); border-color:var(--marcador); color:var(--marcador-tinta)}
+.meta .det{color:var(--tinta-2)}
+.item .desc{margin-top:6px}
+.como-usar{margin-top:24px; padding:18px 20px; border-radius:var(--raio); background:var(--superficie); border:1px solid var(--linha)}
+.como-usar h2{font-family:var(--f-display); font-weight:500; font-size:20px; margin:0 0 12px}
+.como-usar dl{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px 24px; margin:0}
+@media (max-width:640px){ .como-usar dl{grid-template-columns:minmax(0,1fr)} }
+.como-usar dt{margin-bottom:4px; display:flex; gap:6px; flex-wrap:wrap}
+.como-usar dd{margin:0; color:var(--tinta-2); font-size:14px}
+.dica-uso{margin:14px 0 0; font-size:14px}
+.resultado{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-top:22px}
+.resultado p{margin:0}
+.grupo h2 .sigla{margin-right:2px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(function(){
+  var AREAS = {
+    comece:{sigla:"GUIA", nome:"Comece aqui", cor:"--ge", hash:"comece"},
+    ling:{sigla:"LC", nome:"Linguagens", cor:"--lc", hash:"linguagens"},
+    hum:{sigla:"CH", nome:"Humanas", cor:"--ch", hash:"humanas"},
+    nat:{sigla:"CN", nome:"Natureza", cor:"--cn", hash:"natureza"},
+    mat:{sigla:"MT", nome:"Matemática", cor:"--mt", hash:"matematica"},
+    red:{sigla:"RD", nome:"Redação", cor:"--rd", hash:"redacao"},
+    uerj:{sigla:"UERJ", nome:"UERJ", cor:"--uj", hash:"uerj"}
+  };
+  var ORDEM = ["comece","ling","hum","nat","mat","red","uerj"];
+  var TIPOS = {
+    ebook:{nome:"E-books", um:"E-book"},
+    lista:{nome:"Listas", um:"Lista"},
+    resumo:{nome:"Resumos", um:"Resumo"},
+    mapa:{nome:"Mapas mentais", um:"Mapa mental"},
+    revisao:{nome:"Revisões", um:"Revisão"},
+    guia:{nome:"Guias", um:"Guia"},
+    slides:{nome:"Aulas e slides", um:"Aula"},
+    provas:{nome:"Provas e simulados", um:"Prova"}
+  };
+  var ORDEM_TIPOS = ["ebook","lista","resumo","mapa","revisao","guia","slides","provas"];
+
+  var materiais = [];
+  var ui = {area:"comece", disciplina:"todas", tipo:"todos", busca:"", estado:"carregando"};
+  var h = (location.hash || "").replace("#","");
+  ORDEM.forEach(function(k){ if (AREAS[k].hash === h) ui.area = k; });
+  var app = document.getElementById("app");
+
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function norm(s){ return String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase(); }
+  function linkSeguro(u){ return /^https?:\/\//i.test(u||"") || /^[\w\-]+\.html?$/i.test(u||"") ? u : "#"; }
+  function porNome(a,b){ return String(a).localeCompare(String(b), "pt-BR", {numeric:true}); }
+
+  var iconeBusca = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none"/><path d="M20 20l-3.5-3.5"/></svg>';
+  var iconeAbrir = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+
+  function montarEstrutura(){
+    app.innerHTML =
+      '<header class="topo"><div><p class="olho">Loghus Barra · Material do aluno</p>' +
+      '<h1>Biblioteca <span class="grifo">Loghus</span></h1>' +
+      '<p class="sub">Escolha a sua área, depois a disciplina. Ou procure direto pelo assunto que você quer estudar.</p></div></header>' +
+      '<div class="busca grande">' + iconeBusca + '<input id="busca" type="search" placeholder="Procure um assunto: estequiometria, Era Vargas, funções…" aria-label="Buscar materiais" autocomplete="off"></div>' +
+      '<nav class="areas" id="areas" aria-label="Áreas"></nav>' +
+      '<div id="zona-filtros"></div>' +
+      '<div id="zona-lista"></div>' +
+      '<p class="rodape">Os arquivos abrem no Google Drive. Se pedir login, avise a equipe Loghus.</p>';
+  }
+
+  function desenharAreas(){
+    var cont = {}; materiais.forEach(function(m){ cont[m.area] = (cont[m.area]||0) + 1; });
+    var buscando = norm(ui.busca).trim() !== "";
+    document.getElementById("areas").innerHTML = ORDEM.map(function(k){
+      var a = AREAS[k], sel = !buscando && ui.area === k;
+      return '<button type="button" class="area-btn" data-area="'+k+'" aria-pressed="'+sel+'" style="--cor:var('+a.cor+')">' +
+        '<span class="sigla">'+a.sigla+'</span><span class="area-nome">'+esc(a.nome)+'</span><span class="area-n">'+(cont[k]||0)+'</span></button>';
+    }).join("");
+  }
+
+  function daArea(){ return materiais.filter(function(m){ return m.area === ui.area; }); }
+
+  function chip(grupo, valor, rotulo, ativo, n){
+    return '<button type="button" class="chip" data-grupo="'+grupo+'" data-valor="'+esc(valor)+'" aria-pressed="'+ativo+'">'+esc(rotulo)+(n!=null?'<span class="n">'+n+'</span>':'')+'</button>';
+  }
+
+  function desenharFiltros(){
+    var z = document.getElementById("zona-filtros");
+    if (ui.estado !== "ok" || norm(ui.busca).trim() !== "" || ui.area === "comece"){ z.innerHTML = ""; return; }
+    var base = daArea();
+    var discs = []; base.forEach(function(m){ if (discs.indexOf(m.disciplina) === -1) discs.push(m.disciplina); });
+    discs.sort(function(a,b){ var ga = /geral|UERJ$/i.test(a), gb = /geral|UERJ$/i.test(b); return ga!==gb ? (ga?1:-1) : porNome(a,b); });
+    var html = "";
+    if (discs.length > 1){
+      html += '<div class="filtro"><span class="rot-filtro">Disciplina</span><div class="chips">' + chip("disciplina","todas","Todas", ui.disciplina==="todas") +
+        discs.map(function(d){ return chip("disciplina", d, d, ui.disciplina===d, base.filter(function(m){ return m.disciplina===d; }).length); }).join("") + '</div></div>';
+    }
+    var base2 = base.filter(function(m){ return ui.disciplina==="todas" || m.disciplina===ui.disciplina; });
+    var tipos = ORDEM_TIPOS.filter(function(t){ return base2.some(function(m){ return m.tipo===t; }); });
+    if (tipos.length > 1){
+      html += '<div class="filtro"><span class="rot-filtro">Tipo</span><div class="chips">' + chip("tipo","todos","Todos", ui.tipo==="todos") +
+        tipos.map(function(t){ return chip("tipo", t, TIPOS[t].nome, ui.tipo===t, base2.filter(function(m){ return m.tipo===t; }).length); }).join("") + '</div></div>';
+    }
+    z.innerHTML = html;
+  }
+
+  function desenharItem(m){
+    var a = AREAS[m.area] || AREAS.comece, t = TIPOS[m.tipo] || {um:"Material"};
+    var det = m.detalhe && norm(m.detalhe) !== norm(t.um) ? m.detalhe : "";
+    var meta = '<span class="pill pill-'+esc(m.tipo)+'">'+esc(t.um)+'</span>' + (det ? '<span class="det">'+esc(det)+'</span>' : '');
+    if (m.formato) meta += '<span class="det">· '+esc(m.formato)+'</span>';
+    return '<li class="item" style="--cor:var('+a.cor+')"><span class="faixa" aria-hidden="true"></span>' +
+      '<div class="corpo"><p class="tit">'+esc(m.titulo)+'</p><div class="meta">'+meta+'</div>' + (m.descricao ? '<p class="desc">'+esc(m.descricao)+'</p>' : '') + '</div>' +
+      '<div class="acoes"><a class="abrir" href="'+esc(linkSeguro(m.link))+'" target="_blank" rel="noopener">Abrir '+iconeAbrir+'</a></div></li>';
+  }
+
+  function ordenarItens(lista){
+    return lista.slice().sort(function(x,y){ return porNome(x.titulo,y.titulo) || ORDEM_TIPOS.indexOf(x.tipo)-ORDEM_TIPOS.indexOf(y.tipo) || porNome(x.detalhe,y.detalhe); });
+  }
+
+  function grupos(lista, chave){
+    var ordem = [], g = {};
+    lista.forEach(function(m){ var k = chave(m); if (!g[k]){ g[k]=[]; ordem.push(k); } g[k].push(m); });
+    return {ordem:ordem, g:g};
+  }
+
+  function secao(titulo, itens, sigla){
+    return '<section class="grupo"><h2>'+(sigla||'')+esc(titulo)+'<span class="qtd">'+itens.length+(itens.length===1?' material':' materiais')+'</span></h2><ul class="lista">'+ordenarItens(itens).map(desenharItem).join("")+'</ul></section>';
+  }
+
+  var COMO_USAR =
+    '<div class="como-usar"><h2>Como usar a biblioteca</h2><dl>' +
+    '<div><dt><span class="pill pill-ebook">E-book</span></dt><dd>Questões do ENEM de um assunto, da mais fácil à mais difícil pela TRI. Bom ponto de partida.</dd></div>' +
+    '<div><dt><span class="pill">Lista</span></dt><dd>Exercícios para treinar. As listas <strong>avançadas</strong> trazem questões de Fuvest, Unicamp e UERJ.</dd></div>' +
+    '<div><dt><span class="pill">Resumo</span> <span class="pill">Mapa mental</span></dt><dd>Teoria condensada para revisar antes de resolver questões.</dd></div>' +
+    '<div><dt><span class="pill">Revisão</span></dt><dd>Blocos de revisão usados em aula.</dd></div>' +
+    '</dl><p class="dica-uso">Sugestão: veja nos guias abaixo quais assuntos mais caem, estude o resumo, resolva o e-book e depois passe para a lista.</p></div>';
+
+  function desenharLista(){
+    var z = document.getElementById("zona-lista");
+    if (ui.estado === "carregando"){ z.innerHTML = '<div class="vazio"><strong>Carregando materiais…</strong></div>'; return; }
+    if (ui.estado === "erro"){ z.innerHTML = '<div class="vazio"><strong>Não foi possível carregar os materiais</strong>Confira se o arquivo materiais.json está na mesma pasta do site e se não há vírgula ou aspas faltando.</div>'; return; }
+    var q = norm(ui.busca).trim();
+    if (q){
+      var termos = q.split(/\s+/);
+      var achados = materiais.filter(function(m){
+        var alvo = norm([m.titulo, m.detalhe, m.disciplina, m.descricao, (TIPOS[m.tipo]||{}).um, (AREAS[m.area]||{}).nome].join(" "));
+        return termos.every(function(t){ return alvo.indexOf(t) !== -1; });
+      });
+      var cab = '<div class="resultado"><p><strong>'+achados.length+'</strong> '+(achados.length===1?'material encontrado':'materiais encontrados')+' para “'+esc(ui.busca.trim())+'”</p><button type="button" class="btn sec" data-acao="limpar">Limpar busca</button></div>';
+      if (!achados.length){ z.innerHTML = cab + '<div class="vazio"><strong>Nada encontrado</strong>Tente uma palavra mais curta, como “geometria” ou “vargas”.</div>'; return; }
+      var html = cab;
+      ORDEM.forEach(function(k){
+        var dela = achados.filter(function(m){ return m.area===k; }); if (!dela.length) return;
+        var gr = grupos(dela, function(m){ return m.disciplina; });
+        gr.ordem.forEach(function(d){ html += secao(AREAS[k].nome + ' · ' + d, gr.g[d], '<span class="sigla" style="--cor:var('+AREAS[k].cor+')">'+AREAS[k].sigla+'</span>'); });
+      });
+      z.innerHTML = html; return;
+    }
+    var itens = daArea().filter(function(m){ return (ui.disciplina==="todas" || m.disciplina===ui.disciplina) && (ui.tipo==="todos" || m.tipo===ui.tipo); });
+    var html2 = ui.area === "comece" ? COMO_USAR : "";
+    if (!itens.length){ z.innerHTML = html2 + '<div class="vazio"><strong>Nenhum material aqui ainda</strong>Troque o filtro ou escolha outra área.</div>'; return; }
+    var gr2 = grupos(itens, function(m){ return m.disciplina; });
+    gr2.ordem.sort(function(a,b){ var ga = /geral|UERJ$/i.test(a), gb = /geral|UERJ$/i.test(b); return ga!==gb ? (ga?1:-1) : porNome(a,b); });
+    gr2.ordem.forEach(function(d){ html2 += secao(d, gr2.g[d]); });
+    z.innerHTML = html2;
+  }
+
+  function desenharTudo(){ desenharAreas(); desenharFiltros(); desenharLista(); }
+
+  app.addEventListener("click", function(ev){
+    var b = ev.target.closest(".area-btn, .chip, [data-acao]"); if (!b) return;
+    if (b.classList.contains("area-btn")){
+      ui.area = b.dataset.area; ui.disciplina = "todas"; ui.tipo = "todos";
+      if (ui.busca){ ui.busca = ""; document.getElementById("busca").value = ""; }
+      try { history.replaceState(null, "", "#" + AREAS[ui.area].hash); } catch(e){}
+      desenharTudo(); return;
+    }
+    if (b.classList.contains("chip")){
+      if (b.dataset.grupo === "disciplina"){ ui.disciplina = b.dataset.valor; ui.tipo = "todos"; } else ui.tipo = b.dataset.valor;
+      desenharFiltros(); desenharLista(); return;
+    }
+    if (b.dataset.acao === "limpar"){ ui.busca = ""; document.getElementById("busca").value = ""; desenharTudo(); document.getElementById("busca").focus(); }
+  });
+  var t0;
+  app.addEventListener("input", function(ev){
+    if (ev.target.id !== "busca") return;
+    ui.busca = ev.target.value; clearTimeout(t0); t0 = setTimeout(desenharTudo, 120);
+  });
+
+  montarEstrutura(); desenharTudo();
+
+  fetch("materiais.json", {cache:"no-cache"}).then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){ materiais = (Array.isArray(d) ? d : (d && d.materiais) || []).filter(function(m){ return m && m.titulo && AREAS[m.area]; }); ui.estado = "ok"; })
+    .catch(function(){ ui.estado = "erro"; })
+    .then(desenharTudo);
+})();
+</script>
+</body>
+</html>
