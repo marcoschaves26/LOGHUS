@@ -38,133 +38,20 @@
  {
   "area": "comece",
   "disciplina": "Guias e provas",
+  "titulo": "Provas ENEM 2015-2025",
+  "detalhe": "E-book com habilidade e dificuldade (TRI)",
+  "tipo": "provas",
+  "link": "https://drive.google.com/file/d/1k9iOv-fwcizSvk7pDZg5LhwIA11mRkol/view",
+  "descricao": "As provas do ENEM de 2015 a 2025 com a competência, a habilidade e a dificuldade TRI de cada questão."
+ },
+ {
+  "area": "comece",
+  "disciplina": "Guias e provas",
   "titulo": "Provas ENEM PPL 2016-2025 (2ª aplicação)",
   "detalhe": "",
   "tipo": "provas",
   "link": "https://drive.google.com/file/d/1DpgM1LmQVdzFHWXJCk24zDwtlhLvoTWf/view",
   "descricao": "Os dez cadernos da 2ª aplicação, com competência, habilidade, dificuldade e conteúdo de cada questão."
- },
- {
-  "area": "ling",
-  "disciplina": "Linguagens (geral)",
-  "titulo": "Linguagens ENEM 2015-2025",
-  "detalhe": "E-book por habilidade e dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1Xz2b90nnn4wlDp6_AKKQdOrC5-4eblk7/view",
-  "descricao": "550 questões oficiais nas 30 habilidades, da mais fácil à mais difícil."
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Escolas literárias",
-  "detalhe": "Resumo (Profa. Bianca Moura)",
-  "tipo": "resumo",
-  "link": "https://drive.google.com/file/d/1j4SWIiL3XDcNiqW6UTOwaapxwAGsLt0z/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Literatura",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1BG-p0RxvQixmsg6BQHY_DJs_eRwrLycS/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Literatura ENEM e Fuvest",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1-Hvw2G0OH8NULK8R1AeQndOlprJwGUzJ/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Modernismo",
-  "detalhe": "Lista 1",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1jtnOQWuYeLFn51z-zqHOdSdrXT7AbSx6/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Modernismo",
-  "detalhe": "Lista 2",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1q-co3Zdvxa6EcG7etQxZNzgZCSfitE20/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Literatura",
-  "titulo": "Poemas e textos literários",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1wUthm_PAPRsin5l_KMsan66WtMoiUPB5/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Competência 6 (H18)",
-  "detalhe": "E-book",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1rqXll5bXcm6ABHA79jFm-BSVrUQ_lH_Y/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Competência 6 (H18)",
-  "detalhe": "Resumo",
-  "tipo": "resumo",
-  "link": "https://drive.google.com/file/d/1mi-co6Dx-5rDiJFiWsW5joWaawK_el9j/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Competência 8 (H25 a H27) Variação linguística",
-  "detalhe": "Resumo",
-  "tipo": "resumo",
-  "link": "https://drive.google.com/file/d/1IcsvwesdA_XggpAJ4oKiydXAKDXnk1fn/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Figuras de linguagem",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/175Dma4XZkWbJPQFpVzMxOql0amKUhn7Q/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Gramática",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1g2YRebDoTo9aHzF51wsTILUWIw9miAHE/view"
- },
- {
-  "area": "ling",
-  "disciplina": "Português",
-  "titulo": "Textos publicitários",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/19ra5eoxtjf5YffxWq7a617grZoVTSV6x/view"
- },
- {
-  "area": "hum",
-  "disciplina": "Humanas (geral)",
-  "titulo": "Dicas para a prova de Humanas",
-  "detalhe": "Slides (Celmo Almeida)",
-  "tipo": "slides",
-  "link": "https://drive.google.com/file/d/19TO77YgaPvg8qlM_-Hj2hIydIYt2E3Sc/view",
-  "formato": "Slides"
- },
- {
-  "area": "hum",
-  "disciplina": "Humanas (geral)",
-  "titulo": "Filosofia e Sociologia no ENEM",
-  "detalhe": "Principais pensadores",
-  "tipo": "resumo",
-  "link": "https://drive.google.com/file/d/1_z0NwCi0fCKmePW14qRinnxrfX7WFqRb/view"
  },
  {
   "area": "hum",
@@ -441,10 +328,45 @@
  {
   "area": "hum",
   "disciplina": "História",
+  "titulo": "Dutra a Jango (1946-1964)",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1g2euZOPz_gQuVsU_o6Z-iH9R0t6w-tUj/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Dutra a Jango (1946-1964)",
+  "detalhe": "Simuladinho (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1jK98P1ts_y1A1PIeqHjMpXUEbpa5dnRS/view",
+  "descricao": "15 questões autorais de nível médio e difícil, com gabarito comentado."
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
   "titulo": "Era Vargas",
   "detalhe": "Resumo",
   "tipo": "resumo",
   "link": "https://drive.google.com/file/d/10kqjtmXNtDfawuK3klYcvYgPJg64iVFu/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Era Vargas",
+  "detalhe": "Resumo visual com linha do tempo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1nVg-OB2O7nYtXWC-vXxwvtvj2LbxJEf2/view",
+  "descricao": "1930 a 1945: as três fases, trabalho, propaganda, industrialização e redemocratização."
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Era Vargas",
+  "detalhe": "Simuladinho (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1oEUOIQN7srM2dpfDXn58JncXUMrPl5As/view",
+  "descricao": "15 questões autorais no modelo ENEM."
  },
  {
   "area": "hum",
@@ -571,6 +493,23 @@
  {
   "area": "hum",
   "disciplina": "Humanas (geral)",
+  "titulo": "Dicas para a prova de Humanas",
+  "detalhe": "Slides (Celmo Almeida)",
+  "tipo": "slides",
+  "link": "https://drive.google.com/file/d/19TO77YgaPvg8qlM_-Hj2hIydIYt2E3Sc/view",
+  "formato": "Slides"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
+  "titulo": "Filosofia e Sociologia no ENEM",
+  "detalhe": "Principais pensadores",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1_z0NwCi0fCKmePW14qRinnxrfX7WFqRb/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
   "titulo": "Revisão Humanas H1, H20 e H25 (Celmo Almeida e Marcos Chaves)",
   "detalhe": "",
   "tipo": "revisao",
@@ -593,309 +532,109 @@
   "link": "https://drive.google.com/file/d/1zfBR4fC9tgfomAHqv7K4pnSsCxyn9aT3/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Bioquímica",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1cvwdoe_UM-Ku9WXxULB-x-j0pxtBOmzi/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Citologia",
-  "detalhe": "E-book por dificuldade",
+  "area": "ling",
+  "disciplina": "Linguagens (geral)",
+  "titulo": "Linguagens ENEM 2015-2025",
+  "detalhe": "E-book por habilidade e dificuldade",
   "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/10Td4k2G_519U3RZA85NT9vWSM7K-7KEa/view"
+  "link": "https://drive.google.com/file/d/1Xz2b90nnn4wlDp6_AKKQdOrC5-4eblk7/view",
+  "descricao": "550 questões oficiais nas 30 habilidades, da mais fácil à mais difícil."
  },
  {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Ecologia",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1pXdFWYrMRuZW-9hprC1AjSkE6Lcm4mCR/view"
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Escolas literárias",
+  "detalhe": "Resumo (Profa. Bianca Moura)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1j4SWIiL3XDcNiqW6UTOwaapxwAGsLt0z/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Ecologia",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/13usRvgYoWxdpMP8jgLjZP5dLuSCCI-6Z/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Fisiologia vegetal",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1Msc5aoCwNTdnx2XOkjwcRwZlDzu7VZ1L/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Biologia",
-  "titulo": "Sais minerais",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1DDpeoQAKdvbjuc5yHCnNhV5vWq1iq9HB/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Calorimetria",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/15fNqRK5rbtcQDmWEOOJohc25CxsJVMML/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Cinemática",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1235dol8dQJvbBlBkuf1Ux_aqh2yNBciP/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Cinemática",
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Literatura",
   "detalhe": "Lista avançada",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1Itzuh6aWANtsag0O8Fa82ewqZwaNnLDk/view"
+  "link": "https://drive.google.com/file/d/1BG-p0RxvQixmsg6BQHY_DJs_eRwrLycS/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Circuitos elétricos",
-  "detalhe": "Revisão",
-  "tipo": "revisao",
-  "link": "https://drive.google.com/file/d/18LWMltkIhv3WQRAGYH8EjsrPG72Dz6TP/view"
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Literatura ENEM e Fuvest",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1-Hvw2G0OH8NULK8R1AeQndOlprJwGUzJ/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Dinâmica",
-  "detalhe": "E-book por dificuldade",
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Modernismo",
+  "detalhe": "Lista 1",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1jtnOQWuYeLFn51z-zqHOdSdrXT7AbSx6/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Modernismo",
+  "detalhe": "Lista 2",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1q-co3Zdvxa6EcG7etQxZNzgZCSfitE20/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Literatura",
+  "titulo": "Poemas e textos literários",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1wUthm_PAPRsin5l_KMsan66WtMoiUPB5/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 6 (H18)",
+  "detalhe": "E-book",
   "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1wpkSaO7G93KoAMeZ1yQrWAQFGcXZF5N_/view"
+  "link": "https://drive.google.com/file/d/1rqXll5bXcm6ABHA79jFm-BSVrUQ_lH_Y/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Dinâmica",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1sHjWrAicE5g27tQy4uOHeNOXcz5MKWKZ/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Dinâmica",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1LPwCEEg3uVZXpWr07fyPGWz4kkn8cXb-/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Eletrodinâmica",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1I3LZRSPXcH_dgZRJH1weAAPecGA-AI24/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Eletrodinâmica",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1-G-BO8ZlI8ExFOlR81PxXer0-gs6YOPV/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Eletrostática",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/11j9N74NqwKxKgWuJrnxmhjB7A1sceWGe/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Lançamento oblíquo e gráficos",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1FKJbSo0TwxDL69Z8gfdHHkJ2bozgOQTb/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Ondulatória",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/18gSL4VV3vy2wHIrfaESC4bQHjlB8VmBL/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Termodinâmica",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1Ufj3Yfs_g4i43-ZnKtcelJ5eOGTPw8VG/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Termodinâmica",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1wfVLhuMGe_6ncI0VyNmgxQz2iAgjUilq/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Óptica",
-  "detalhe": "Lista ENEM",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1Pge6-2mrFYUmQLCAW9tctwgrpHLrCcCs/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Física",
-  "titulo": "Óptica",
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 6 (H18)",
   "detalhe": "Resumo",
   "tipo": "resumo",
-  "link": "https://drive.google.com/file/d/1B3boePsLChuLY_N5u5gnSLvmK19EwLH5/view"
+  "link": "https://drive.google.com/file/d/1mi-co6Dx-5rDiJFiWsW5joWaawK_el9j/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Atomística",
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Competência 8 (H25 a H27) Variação linguística",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1IcsvwesdA_XggpAJ4oKiydXAKDXnk1fn/view"
+ },
+ {
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Figuras de linguagem",
   "detalhe": "Lista",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1bL8B7VSWmGOQx32Ky4BCDggbeRiXwi3q/view"
+  "link": "https://drive.google.com/file/d/175Dma4XZkWbJPQFpVzMxOql0amKUhn7Q/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Eletroquímica",
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Gramática",
   "detalhe": "Lista",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/14BJ2BL7T5RKt7LRJYfpy_UjfO9pteWxa/view"
+  "link": "https://drive.google.com/file/d/1g2YRebDoTo9aHzF51wsTILUWIw9miAHE/view"
  },
  {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Eletroquímica e equilíbrio químico",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/117pse0GMIKQb8Cx24MevYIMRltz09rrk/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Equilíbrio e cinética química",
+  "area": "ling",
+  "disciplina": "Português",
+  "titulo": "Textos publicitários",
   "detalhe": "Lista",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1EGMQmCBPuWQ6MalnDXr6WyWfvOvOoMD2/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Estequiometria",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1sGd8NSH5MNjuJeh1_Nr-9C_0gHF0d1DM/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Estequiometria",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1HU9LQSp6_x6xjYW5XqLp-38D9zK5-xkA/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Estequiometria",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1dDX6UwHuIqJAku16-0nMJw52MzBFB6e2/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Estequiometria",
-  "detalhe": "Mapa mental",
-  "tipo": "mapa",
-  "link": "https://drive.google.com/file/d/1zcTaA3c3LDO5HuD3BZymKSlgF9FAHDLM/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Gases",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1-uTjYhGzTlUVbkTC1FNPeZFPXyfmcNw-/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "NOX e química inorgânica",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1s1ac8qtwWN8EfiHenm0v-uBCMmJ5IYdz/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Radioatividade",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/1wnhdudsdmfsTXwToiXoGhHIM0TUhcPZr/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Radioatividade",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1vabalPTW8YgqD6GX2Yyd5QPl8g-e9Bek/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Reações orgânicas",
-  "detalhe": "Lista avançada",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1UcXJGCXglZN7yg3L4hcZICz20hhGUJRv/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Reações orgânicas",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/137vI11raUBeVmsnDOoZwkTi6NNrrPjRl/view"
- },
- {
-  "area": "nat",
-  "disciplina": "Química",
-  "titulo": "Separação de misturas e óxidos",
-  "detalhe": "E-book por dificuldade",
-  "tipo": "ebook",
-  "link": "https://drive.google.com/file/d/17MSi4q97i3aMrqUUhmp0WQHEyJiTpCzk/view"
- },
- {
-  "area": "mat",
-  "disciplina": "Matemática (geral)",
-  "titulo": "Aula da Semana 13",
-  "detalhe": "Slides",
-  "tipo": "slides",
-  "link": "https://drive.google.com/file/d/1rGegwCfoIeA8OJ7GIR3fxCrESU-lL3zN/view",
-  "formato": "Slides"
+  "link": "https://drive.google.com/file/d/19ra5eoxtjf5YffxWq7a617grZoVTSV6x/view"
  },
  {
   "area": "mat",
@@ -933,17 +672,17 @@
   "area": "mat",
   "disciplina": "Funções e Álgebra",
   "titulo": "Funções",
-  "detalhe": "Lista avançada",
+  "detalhe": "Lista",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/160q6i-8VdNyKQV86QaJO2AgNJW-wk3Ot/view"
+  "link": "https://drive.google.com/file/d/1yu3VizJHnuUx_a7XO51M7JW_gYgYc_rU/view"
  },
  {
   "area": "mat",
   "disciplina": "Funções e Álgebra",
   "titulo": "Funções",
-  "detalhe": "Lista",
+  "detalhe": "Lista avançada",
   "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1yu3VizJHnuUx_a7XO51M7JW_gYgYc_rU/view"
+  "link": "https://drive.google.com/file/d/160q6i-8VdNyKQV86QaJO2AgNJW-wk3Ot/view"
  },
  {
   "area": "mat",
@@ -1094,6 +833,14 @@
   "area": "mat",
   "disciplina": "Probabilidade e Estatística",
   "titulo": "Probabilidade",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1GSQ_YE3kFIXpBzCw4t3uSvY9Du-855Pc/view"
+ },
+ {
+  "area": "mat",
+  "disciplina": "Probabilidade e Estatística",
+  "titulo": "Probabilidade",
   "detalhe": "Lista avançada",
   "tipo": "lista",
   "link": "https://drive.google.com/file/d/1JPQTOnpj6hDzTK-vwpenkPZK3Bb-2OPT/view"
@@ -1105,14 +852,6 @@
   "detalhe": "Lista super avançada (ITA)",
   "tipo": "lista",
   "link": "https://drive.google.com/file/d/1eqgDwVRQOmOsOsokTObpj-oTAAYqFg1F/view"
- },
- {
-  "area": "mat",
-  "disciplina": "Probabilidade e Estatística",
-  "titulo": "Probabilidade",
-  "detalhe": "Lista",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1GSQ_YE3kFIXpBzCw4t3uSvY9Du-855Pc/view"
  },
  {
   "area": "mat",
@@ -1187,6 +926,428 @@
   "link": "https://drive.google.com/file/d/13sFVhpXfgeZYWGlkjqP5pWJbUL2tmDVq/view"
  },
  {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Revisão em 5 blocos",
+  "detalhe": "75 questões estilo ENEM",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1ZQiK4bGNy_zi0gbcTWwwSmaCZ8VOwCDp/view",
+  "descricao": "5 blocos de 15 questões de nível médio: grandezas, geometria, estatística, funções, probabilidade e combinatória."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 01",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1ApEnfD4JhhnjUw8Q3mHZC73sB9EIKePz/view",
+  "descricao": "Bloco 1, assuntos misturados."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 02",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1srHwTVvxMr52INtswgeWz2ABPDujTOry/view",
+  "descricao": "Bloco 2, assuntos misturados."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 03",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1LOoa9TtiAsgklXwA93HIV0f1Y6yW3wt_/view",
+  "descricao": "Bloco 3, assuntos misturados."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 04",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1JjgQs_X9pxyjd9V9fQGzzqRd_Gz98T5J/view",
+  "descricao": "Bloco 4, assuntos misturados."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 05",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/18Z7RS1dLQ2Oh7SmyDz9UScvEBO2X5m_1/view",
+  "descricao": "Bloco 5, assuntos misturados."
+ },
+ {
+  "area": "mat",
+  "disciplina": "Simuladinhos e Revisão",
+  "titulo": "Simuladinho 06",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1YVIebgTgrq4Ta4wzc114iBXE9tguTV3k/view",
+  "descricao": "Assuntos misturados."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Bioquímica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1cvwdoe_UM-Ku9WXxULB-x-j0pxtBOmzi/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Citologia",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/10Td4k2G_519U3RZA85NT9vWSM7K-7KEa/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Ecologia",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1pXdFWYrMRuZW-9hprC1AjSkE6Lcm4mCR/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Ecologia",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/13usRvgYoWxdpMP8jgLjZP5dLuSCCI-6Z/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Fisiologia vegetal",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Msc5aoCwNTdnx2XOkjwcRwZlDzu7VZ1L/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Impactos ambientais",
+  "detalhe": "E-book interdisciplinar (resumo + questões)",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1lzyYjVPrl6HQ1MNbxDjG8FvrKOouHcTK/view",
+  "descricao": "Geografia, Biologia e Química: resumo teórico e questões do ENEM e do PPL."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Sais minerais",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1DDpeoQAKdvbjuc5yHCnNhV5vWq1iq9HB/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Simuladinho 01",
+  "detalhe": "Revisão ENEM (20 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1HZdZSMa3C3az1JHPst0Pz2LEmB6zgBRA/view",
+  "descricao": "Ecologia, genética, fisiologia, citologia, evolução, biotecnologia e saúde."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Biologia",
+  "titulo": "Simuladinho 02",
+  "detalhe": "Revisão ENEM (20 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1xdvGI4TK6IuQzJe30TKJlb7yqMzXssuj/view",
+  "descricao": "Ecologia, genética, fisiologia, citologia, evolução, biotecnologia e saúde."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Calorimetria",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/15fNqRK5rbtcQDmWEOOJohc25CxsJVMML/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Cinemática",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1235dol8dQJvbBlBkuf1Ux_aqh2yNBciP/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Cinemática",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Itzuh6aWANtsag0O8Fa82ewqZwaNnLDk/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Circuitos elétricos",
+  "detalhe": "Revisão",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/18LWMltkIhv3WQRAGYH8EjsrPG72Dz6TP/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1wpkSaO7G93KoAMeZ1yQrWAQFGcXZF5N_/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1LPwCEEg3uVZXpWr07fyPGWz4kkn8cXb-/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Dinâmica",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1sHjWrAicE5g27tQy4uOHeNOXcz5MKWKZ/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrodinâmica",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1I3LZRSPXcH_dgZRJH1weAAPecGA-AI24/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrodinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1-G-BO8ZlI8ExFOlR81PxXer0-gs6YOPV/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Eletrostática",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/11j9N74NqwKxKgWuJrnxmhjB7A1sceWGe/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Lançamento oblíquo e gráficos",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1FKJbSo0TwxDL69Z8gfdHHkJ2bozgOQTb/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Ondulatória",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/18gSL4VV3vy2wHIrfaESC4bQHjlB8VmBL/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Simuladinho 01",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/10RxDlj_O1xFcsNjWiOZ-2on_yRMTmAUJ/view",
+  "descricao": "Questões 1 a 15: cinemática, dinâmica, ondas, óptica, eletricidade, calorimetria e hidrostática."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Simuladinho 02",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1TaBT-T9ArsVR8CnUoaMHyBvOyDRjeFI6/view",
+  "descricao": "Questões 16 a 30, assuntos misturados."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Simuladinho 03",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1Lvz7prFaJFvRqzVl-qbMB2qnhMWzvOEm/view",
+  "descricao": "Questões 31 a 45, assuntos misturados."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Simuladinho 04",
+  "detalhe": "Revisão ENEM (15 questões)",
+  "tipo": "revisao",
+  "link": "https://drive.google.com/file/d/1de37o3MRz_yF-5OJDshpRjbDDqHiEfYq/view",
+  "descricao": "Questões 46 a 60, assuntos misturados."
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Termodinâmica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1wfVLhuMGe_6ncI0VyNmgxQz2iAgjUilq/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Termodinâmica",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Ufj3Yfs_g4i43-ZnKtcelJ5eOGTPw8VG/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Óptica",
+  "detalhe": "Lista ENEM",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1Pge6-2mrFYUmQLCAW9tctwgrpHLrCcCs/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Física",
+  "titulo": "Óptica",
+  "detalhe": "Resumo",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1B3boePsLChuLY_N5u5gnSLvmK19EwLH5/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Atomística",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1bL8B7VSWmGOQx32Ky4BCDggbeRiXwi3q/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Eletroquímica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/14BJ2BL7T5RKt7LRJYfpy_UjfO9pteWxa/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Eletroquímica e equilíbrio químico",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/117pse0GMIKQb8Cx24MevYIMRltz09rrk/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Equilíbrio e cinética química",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1EGMQmCBPuWQ6MalnDXr6WyWfvOvOoMD2/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1sGd8NSH5MNjuJeh1_Nr-9C_0gHF0d1DM/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1dDX6UwHuIqJAku16-0nMJw52MzBFB6e2/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1HU9LQSp6_x6xjYW5XqLp-38D9zK5-xkA/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Estequiometria",
+  "detalhe": "Mapa mental",
+  "tipo": "mapa",
+  "link": "https://drive.google.com/file/d/1zcTaA3c3LDO5HuD3BZymKSlgF9FAHDLM/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Gases",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1-uTjYhGzTlUVbkTC1FNPeZFPXyfmcNw-/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "NOX e química inorgânica",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1s1ac8qtwWN8EfiHenm0v-uBCMmJ5IYdz/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Radioatividade",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1wnhdudsdmfsTXwToiXoGhHIM0TUhcPZr/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Radioatividade",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1vabalPTW8YgqD6GX2Yyd5QPl8g-e9Bek/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Reações orgânicas",
+  "detalhe": "Lista",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/137vI11raUBeVmsnDOoZwkTi6NNrrPjRl/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Reações orgânicas",
+  "detalhe": "Lista avançada",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1UcXJGCXglZN7yg3L4hcZICz20hhGUJRv/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Química",
+  "titulo": "Separação de misturas e óxidos",
+  "detalhe": "E-book por dificuldade",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/17MSi4q97i3aMrqUUhmp0WQHEyJiTpCzk/view"
+ },
+ {
   "area": "red",
   "disciplina": "Redação",
   "titulo": "Redação nota 1000",
@@ -1213,22 +1374,6 @@
  },
  {
   "area": "uerj",
-  "disciplina": "Matemática",
-  "titulo": "Combinatória e probabilidade",
-  "detalhe": "Lista UERJ",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1vQ-UvlpRKPQPfVOwHK_HDG-V5c40lNdM/view"
- },
- {
-  "area": "uerj",
-  "disciplina": "Matemática",
-  "titulo": "Funções",
-  "detalhe": "Lista UERJ",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1lGC-vqys1E_6TyBjTIt8q1CGhx9al60f/view"
- },
- {
-  "area": "uerj",
   "disciplina": "Física",
   "titulo": "Física",
   "detalhe": "Lista 1º EQ",
@@ -1245,22 +1390,6 @@
  },
  {
   "area": "uerj",
-  "disciplina": "Matemática",
-  "titulo": "Geometria plana",
-  "detalhe": "Lista UERJ",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1ZrSSv_PMr4Cpjq1oRDVbgs_Ou8dqI8u6/view"
- },
- {
-  "area": "uerj",
-  "disciplina": "Matemática",
-  "titulo": "Grandezas proporcionais",
-  "detalhe": "Lista UERJ",
-  "tipo": "lista",
-  "link": "https://drive.google.com/file/d/1VJ2986EoloPzJeg-BXbYuaYm8cG39Fsx/view"
- },
- {
-  "area": "uerj",
   "disciplina": "História",
   "titulo": "História",
   "detalhe": "Lista 1º EQ",
@@ -1274,6 +1403,38 @@
   "detalhe": "Lista UERJ 2",
   "tipo": "lista",
   "link": "https://drive.google.com/file/d/1FwtA7OCx2yCOtpQQu1gqIek9uMWjgUaN/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Combinatória e probabilidade",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1vQ-UvlpRKPQPfVOwHK_HDG-V5c40lNdM/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Funções",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1lGC-vqys1E_6TyBjTIt8q1CGhx9al60f/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Geometria plana",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1ZrSSv_PMr4Cpjq1oRDVbgs_Ou8dqI8u6/view"
+ },
+ {
+  "area": "uerj",
+  "disciplina": "Matemática",
+  "titulo": "Grandezas proporcionais",
+  "detalhe": "Lista UERJ",
+  "tipo": "lista",
+  "link": "https://drive.google.com/file/d/1VJ2986EoloPzJeg-BXbYuaYm8cG39Fsx/view"
  },
  {
   "area": "uerj",
