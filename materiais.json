@@ -1,6 +1,16 @@
 [
  {
   "area": "comece",
+  "disciplina": "Ferramentas",
+  "titulo": "Gerador de Questões",
+  "detalhe": "Ferramenta interativa",
+  "tipo": "guia",
+  "formato": "Power BI",
+  "link": "https://app.powerbi.com/view?r=eyJrIjoiZmEzNTczMjktZTU0My00ZTQ3LWFmYTYtYmY0MzNjYzUwOTVhIiwidCI6Ijc4NmU0MDgzLTdiMjMtNDRlOC04Y2FjLTQ4NGI5ZDRkOTVhMSJ9",
+  "descricao": "Abre no navegador do celular ou do computador."
+ },
+ {
+  "area": "comece",
   "disciplina": "Guias e provas",
   "titulo": "Assuntos que mais caem",
   "detalhe": "Linguagens e Humanas",
