@@ -130,7 +130,7 @@ h1 .grifo{background:linear-gradient(transparent 58%, var(--marcador) 58%, var(-
 .busca.grande{margin-top:24px}
 .busca.grande input{height:52px; font-size:16px; padding-left:44px; border-radius:12px}
 .busca.grande svg{left:15px}
-.areas{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); gap:8px; margin-top:16px}
+.areas{display:grid; grid-template-columns:repeat(8, minmax(0,1fr)); gap:8px; margin-top:16px}
 @media (max-width:860px){ .areas{grid-template-columns:repeat(4, minmax(0,1fr))} }
 @media (max-width:480px){ .areas{grid-template-columns:repeat(3, minmax(0,1fr)); gap:6px} .area-btn{padding:9px 8px; gap:2px} .area-btn .sigla{display:none} .area-btn .area-nome{font-size:13px; letter-spacing:-.01em} }
 .area-btn{display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:0; padding:12px; border:1px solid var(--linha); border-radius:var(--raio); background:var(--superficie); cursor:pointer; text-align:left; position:relative}
@@ -207,9 +207,10 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
     nat:{sigla:"CN", nome:"Natureza", cor:"--cn", hash:"natureza"},
     mat:{sigla:"MT", nome:"Matemática", cor:"--mt", hash:"matematica"},
     red:{sigla:"RD", nome:"Redação", cor:"--rd", hash:"redacao"},
+    simul:{sigla:"SIM", nome:"Mini-simulados", cor:"--uj", hash:"minisimulados"},
     uerj:{sigla:"UERJ", nome:"UERJ", cor:"--uj", hash:"uerj"}
   };
-  var ORDEM = ["comece","ling","hum","nat","mat","red","uerj"];
+  var ORDEM = ["comece","ling","hum","nat","mat","red","simul","uerj"];
   var TIPOS = {
     ebook:{nome:"E-books", um:"E-book"},
     lista:{nome:"Listas", um:"Lista"},
@@ -218,9 +219,10 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
     revisao:{nome:"Revisões", um:"Revisão"},
     guia:{nome:"Guias", um:"Guia"},
     slides:{nome:"Aulas e slides", um:"Aula"},
+    simulado:{nome:"Mini-simulados", um:"Simulado"},
     provas:{nome:"Provas e simulados", um:"Prova"}
   };
-  var ORDEM_TIPOS = ["ebook","lista","resumo","mapa","revisao","guia","slides","provas"];
+  var ORDEM_TIPOS = ["ebook","lista","resumo","mapa","revisao","simulado","guia","slides","provas"];
 
   var materiais = [];
   var ui = {area:"comece", disciplina:"todas", tipo:"todos", busca:"", estado:"carregando"};
@@ -315,6 +317,7 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
     '<div><dt><span class="pill">Lista</span></dt><dd>Exercícios para treinar. As listas <strong>avançadas</strong> trazem questões de Fuvest, Unicamp e UERJ.</dd></div>' +
     '<div><dt><span class="pill">Resumo</span> <span class="pill">Mapa mental</span></dt><dd>Teoria condensada para revisar antes de resolver questões.</dd></div>' +
     '<div><dt><span class="pill">Revisão</span></dt><dd>Blocos de revisão usados em aula.</dd></div>' +
+    '<div><dt><span class="pill">Simulado</span></dt><dd>Mini-simulados de 15 a 25 questões com gabarito comentado, para treinar no ritmo da prova.</dd></div>' +
     '</dl><p class="dica-uso">Sugestão: veja nos guias abaixo quais assuntos mais caem, estude o resumo, resolva o e-book e depois passe para a lista.</p></div>';
 
   function desenharLista(){
