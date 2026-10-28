@@ -1448,6 +1448,24 @@
   "descricao": "Estilo ENEM, com gabarito simples e comentado."
  },
  {
+  "area": "simul",
+  "disciplina": "Simulado ENEM completo",
+  "titulo": "Simulado modelo ENEM 1º dia",
+  "detalhe": "Caderno de questões (90 questões e redação)",
+  "tipo": "simulado",
+  "link": "https://drive.google.com/file/d/1H6-sj6sJkxDiX6I6QvGBQhZlyvaz5ka2/view",
+  "descricao": "Prova completa do 1º dia (Linguagens, Humanas e Redação), Prof. Vitor Rosadas. Faça em 5h30, como no ENEM."
+ },
+ {
+  "area": "simul",
+  "disciplina": "Simulado ENEM completo",
+  "titulo": "Simulado modelo ENEM 1º dia",
+  "detalhe": "Gabarito comentado",
+  "tipo": "simulado",
+  "link": "https://drive.google.com/file/d/1FLsTUqBvO2y9qyANdSUaD639nyEzgZqK/view",
+  "descricao": "Resolução comentada das 90 questões do 1º dia. Confira só depois de fazer a prova."
+ },
+ {
   "area": "uerj",
   "disciplina": "Biologia",
   "titulo": "Biologia",
