@@ -347,6 +347,24 @@
  {
   "area": "hum",
   "disciplina": "História",
+  "titulo": "Brasil Colônia (séculos XVI-XIX)",
+  "detalhe": "Resumo em tópicos (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1YeSqtdV45PlwtuWeoIyRtfFQIKPD7EX1/view",
+  "descricao": "Caderno de revisão: administração, açúcar, escravidão, invasões, mineração e tratados."
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Brasil Pré-Colonial (1500-1532)",
+  "detalhe": "Resumo em tópicos (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/199xOsk883kVGe05-bwkIJQf_aVvcjLgN/view",
+  "descricao": "Caderno de revisão: povos originários, Carta de Caminha, pau-brasil, escambo e feitorias."
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
   "titulo": "Dutra a Jango (1946-1964)",
   "detalhe": "Resumo",
   "tipo": "resumo",
