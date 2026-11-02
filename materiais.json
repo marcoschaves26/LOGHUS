@@ -540,6 +540,15 @@
   "area": "hum",
   "disciplina": "Humanas (geral)",
   "titulo": "Dicas para a prova de Humanas",
+  "detalhe": "Guia por competências e habilidades (Celmo Almeida)",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/14Dd2kJrcYSwvoKR3O8Lrn_Y2aw1MlPnH/view",
+  "descricao": "As 6 competências e 30 habilidades de Humanas, com exemplos, interpretação de fontes e estratégia de prova."
+ },
+ {
+  "area": "hum",
+  "disciplina": "Humanas (geral)",
+  "titulo": "Dicas para a prova de Humanas",
   "detalhe": "Slides (Celmo Almeida)",
   "tipo": "slides",
   "link": "https://drive.google.com/file/d/19TO77YgaPvg8qlM_-Hj2hIydIYt2E3Sc/view",
@@ -585,6 +594,15 @@
   "tipo": "ebook",
   "link": "https://drive.google.com/file/d/1Xz2b90nnn4wlDp6_AKKQdOrC5-4eblk7/view",
   "descricao": "550 questões oficiais nas 30 habilidades, da mais fácil à mais difícil."
+ },
+ {
+  "area": "ling",
+  "disciplina": "Linguagens (geral)",
+  "titulo": "Linguagens ENEM 2024 e 2025",
+  "detalhe": "Guia das questões mais fáceis e mais difíceis (Celmo Almeida)",
+  "tipo": "guia",
+  "link": "https://drive.google.com/file/d/1Fwd1PMiCk2y7T9iQbCvxrQVuZMzmP-7b/view",
+  "descricao": "20 itens comentados pela dificuldade (TRI), as 9 competências em uma frase, comandos, distratores e dicas de prova."
  },
  {
   "area": "ling",
