@@ -390,6 +390,15 @@
  {
   "area": "hum",
   "disciplina": "História",
+  "titulo": "Grécia Antiga",
+  "detalhe": "Resumo em tópicos (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1B5KGccQIXSRTdfwmU6hJ850NJgb7ryeS/view",
+  "descricao": "Caderno de revisão: das póleis ao helenismo, democracia, Esparta, guerras e filosofia."
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
   "titulo": "Grécia e Roma",
   "detalhe": "Lista avançada",
   "tipo": "lista",
@@ -434,6 +443,15 @@
   "detalhe": "Resumo",
   "tipo": "resumo",
   "link": "https://drive.google.com/file/d/17LvYznvkQWJtwnKzNACTqk3vkUARWsQC/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Inconfidência Mineira e Conjuração Baiana",
+  "detalhe": "Resumo em tópicos (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/17Kyrhz79x1DwEYRqpR9eFpg6zyYc-0AU/view",
+  "descricao": "Caderno de revisão (1789 e 1798): bases sociais, projetos republicanos e repressão colonial."
  },
  {
   "area": "hum",
@@ -500,6 +518,15 @@
   "detalhe": "Mapa mental",
   "tipo": "mapa",
   "link": "https://drive.google.com/file/d/1H_-GvJmhdiRd6DVxx4171SlJHKMr-sX4/view"
+ },
+ {
+  "area": "hum",
+  "disciplina": "História",
+  "titulo": "Roma Antiga",
+  "detalhe": "Resumo em tópicos (Celmo Almeida)",
+  "tipo": "resumo",
+  "link": "https://drive.google.com/file/d/1TDZT8uHm5xOn1tVwvtGsVPBdBJ6DnlUf/view",
+  "descricao": "Caderno de revisão: da Monarquia ao Império, sociedade, cidadania, conquistas e legado."
  },
  {
   "area": "hum",
@@ -1464,6 +1491,24 @@
   "tipo": "simulado",
   "link": "https://drive.google.com/file/d/1NA7Pf_UjrEXTVVETsv_crz1HvX00o12t/view",
   "descricao": "Estilo ENEM, com gabarito simples e comentado."
+ },
+ {
+  "area": "simul",
+  "disciplina": "Matemática",
+  "titulo": "Simulado autoral 05",
+  "detalhe": "15 questões inéditas (Prof. Vitor)",
+  "tipo": "simulado",
+  "link": "https://drive.google.com/file/d/1-tQGk3YYtjPm8T7-GfWKouSZBIyEVeET/view",
+  "descricao": "Caderno de questões estilo ENEM. O gabarito comentado está logo abaixo."
+ },
+ {
+  "area": "simul",
+  "disciplina": "Matemática",
+  "titulo": "Simulado autoral 05",
+  "detalhe": "Gabarito comentado (Prof. Vitor)",
+  "tipo": "simulado",
+  "link": "https://drive.google.com/file/d/1nQy9H3RbWC-CmhosC4encROZIHPfqGxI/view",
+  "descricao": "Resolução passo a passo, análise dos distratores e dificuldade estimada (TRI). Confira só depois de fazer."
  },
  {
   "area": "simul",
