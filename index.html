@@ -194,6 +194,7 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
 .inst-link{display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:14px; font-size:14px}
 .inst-link code{background:#ffffff; color:#0b2d6b; padding:4px 8px; border-radius:6px; overflow-wrap:anywhere; min-width:0}
 .rodape a{color:var(--tinta)}
+.contador{display:block; margin-top:8px; font-family:var(--f-mono); font-size:12px; letter-spacing:.04em; color:var(--tinta-2)}
 .destaque{margin-top:20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 24px; padding:18px 20px; border-radius:12px; background:#ffffff; color:#0b2d6b}
 .dest-txt{min-width:0; flex:1 1 280px}
 .dest-olho{margin:0 0 6px; font-family:var(--f-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#3d5a94}
@@ -268,7 +269,7 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
       '<nav class="areas" id="areas" aria-label="Áreas"></nav>' +
       '<div id="zona-filtros"></div>' +
       '<div id="zona-lista"></div>' +
-      '<p class="rodape">Os arquivos abrem no Google Drive. Se pedir login, avise a equipe Loghus. <a href="#instalar">Instalar no celular</a></p>';
+      '<p class="rodape">Os arquivos abrem no Google Drive. Se pedir login, avise a equipe Loghus. <a href="#instalar">Instalar no celular</a><span id="contador-acessos" class="contador" hidden></span></p>';
   }
 
   function desenharAreas(){
@@ -314,7 +315,7 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
     if (m.formato) meta += '<span class="det">· '+esc(m.formato)+'</span>';
     return '<li class="item" style="--cor:var('+a.cor+')"><span class="faixa" aria-hidden="true"></span>' +
       '<div class="corpo"><p class="tit">'+esc(m.titulo)+'</p><div class="meta">'+meta+'</div>' + (m.descricao ? '<p class="desc">'+esc(m.descricao)+'</p>' : '') + '</div>' +
-      '<div class="acoes"><a class="abrir" href="'+esc(linkSeguro(m.link))+'" target="_blank" rel="noopener">Abrir '+iconeAbrir+'</a></div></li>';
+      '<div class="acoes"><a class="abrir" href="'+esc(linkSeguro(m.link))+'" data-area="'+esc(m.area)+'" data-titulo="'+esc(m.titulo)+'" data-detalhe="'+esc(m.detalhe||"")+'" target="_blank" rel="noopener">Abrir '+iconeAbrir+'</a></div></li>';
   }
 
   function ordenarItens(lista){
@@ -467,6 +468,43 @@ body{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inse
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
   }
+})();
+</script>
+<script>
+// Contador de acessos: registra cada abertura do app e cada material aberto numa planilha do Google Drive.
+(function(){
+  var API = "https://script.google.com/macros/s/AKfycbzImvkj9kLECw-uKHe4LJuf9hpVxwV9-sWRkDOgWO7bPbKlkRIcDi7gA0FigcYw7a_qBQ/exec";
+  function endereco(p){ return API + "?" + Object.keys(p).map(function(k){ return k + "=" + encodeURIComponent(p[k] == null ? "" : p[k]); }).join("&"); }
+  function mostrar(total){
+    var el = document.getElementById("contador-acessos");
+    if (!el || !(total > 0)) return;
+    el.textContent = total.toLocaleString("pt-BR") + (total === 1 ? " acesso ao app" : " acessos ao app");
+    el.hidden = false;
+  }
+  var instalado = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+  var jaContou = false;
+  try { jaContou = sessionStorage.getItem("loghus-visita") === "1"; } catch (e) {}
+  var acao = jaContou ? "total" : "visita";
+  fetch(endereco({acao: acao, area: instalado ? "app instalado" : "navegador"}), {cache: "no-store"})
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (acao === "visita") { try { sessionStorage.setItem("loghus-visita", "1"); } catch (e) {} }
+      mostrar(d && d.total);
+    })
+    .catch(function(){});
+  document.addEventListener("click", function(ev){
+    var a = ev.target.closest && ev.target.closest("a.abrir, .destaque a"); if (!a) return;
+    var dest = a.closest(".destaque");
+    var h2 = dest && dest.querySelector("h2");
+    var p = {
+      acao: "material",
+      link: a.href,
+      area: dest ? "destaque" : (a.getAttribute("data-area") || ""),
+      titulo: dest ? (h2 ? h2.textContent : "Destaque") : (a.getAttribute("data-titulo") || ""),
+      detalhe: dest ? "Pasta no Drive" : (a.getAttribute("data-detalhe") || "")
+    };
+    try { fetch(endereco(p), {mode: "no-cors", keepalive: true}); } catch (e) {}
+  });
 })();
 </script>
 </body>
