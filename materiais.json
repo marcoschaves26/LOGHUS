@@ -872,6 +872,15 @@
  },
  {
   "area": "mat",
+  "disciplina": "Matemática (geral)",
+  "titulo": "Matemática ENEM 2023-2025",
+  "detalhe": "E-book das 15 questões mais fáceis de cada ano (Celmo Almeida)",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1biX7sGfJXkzH65q-FYcqkfjjCVY35kKh/view",
+  "descricao": "45 questões reais (as 15 de menor dificuldade TRI em cada ano), com competências, habilidades e pistas para reconhecer os itens acessíveis."
+ },
+ {
+  "area": "mat",
   "disciplina": "Matemática Financeira",
   "titulo": "Matemática financeira",
   "detalhe": "Lista 1",
@@ -1182,6 +1191,15 @@
   "detalhe": "Resumo",
   "tipo": "resumo",
   "link": "https://drive.google.com/file/d/1B3boePsLChuLY_N5u5gnSLvmK19EwLH5/view"
+ },
+ {
+  "area": "nat",
+  "disciplina": "Natureza (geral)",
+  "titulo": "Natureza ENEM 2023-2025",
+  "detalhe": "E-book das 30 questões mais fáceis de cada ano (Celmo Almeida)",
+  "tipo": "ebook",
+  "link": "https://drive.google.com/file/d/1u758HxX4NNYkiodFs0OPxs4v3uilCk3P/view",
+  "descricao": "90 questões reais (as 30 de menor dificuldade TRI em cada ano), com competências, conteúdos e dicas de TRI."
  },
  {
   "area": "nat",
